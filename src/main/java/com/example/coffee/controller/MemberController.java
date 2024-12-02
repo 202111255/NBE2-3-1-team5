@@ -1,11 +1,11 @@
-package com.example.springusermybatis.controller;
+package com.example.coffee.controller;
 
 
-import com.example.springusermybatis.model.CreateMemberDTO;
-import com.example.springusermybatis.model.LoginRequestDTO;
-import com.example.springusermybatis.service.MemberService;
+import com.example.coffee.model.user.CreateMemberDTO;
+import com.example.coffee.model.user.LoginRequestDTO;
+import com.example.coffee.service.MemberService;
 import jakarta.validation.Valid;
-import com.example.springusermybatis.common.Result;
+import com.example.coffee.common.Result;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
