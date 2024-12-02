@@ -1,7 +1,7 @@
-package com.example.springusermybatis.common.exception;
+package com.example.coffee.common.exception;
 
-import com.example.springusermybatis.common.Result;
-import com.example.springusermybatis.common.ResultCode;
+import com.example.coffee.common.Result;
+import com.example.coffee.common.ResultCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
@@ -11,7 +11,6 @@ import org.springframework.web.bind.MissingServletRequestParameterException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import java.nio.file.AccessDeniedException;
 import java.util.HashMap;
 import java.util.Map;
 

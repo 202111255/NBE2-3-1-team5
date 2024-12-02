@@ -1,4 +1,4 @@
-package com.example.springusermybatis.common.config;
+package com.example.coffee.common.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

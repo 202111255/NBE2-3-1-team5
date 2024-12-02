@@ -1,4 +1,4 @@
-package com.example.springusermybatis.common;
+package com.example.coffee.common;
 
 import lombok.Getter;
 

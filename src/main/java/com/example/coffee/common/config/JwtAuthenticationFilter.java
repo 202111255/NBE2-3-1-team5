@@ -1,4 +1,4 @@
-package com.example.springusermybatis.common.config;
+package com.example.coffee.common.config;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

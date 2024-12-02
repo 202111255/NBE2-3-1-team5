@@ -1,13 +1,13 @@
-package com.example.springusermybatis.service;
-import com.example.springusermybatis.common.ResultCode;
-import com.example.springusermybatis.common.config.JwtTokenProvider;
-import com.example.springusermybatis.model.CreateMemberDTO;
-import com.example.springusermybatis.model.LoginRequestDTO;
-import com.example.springusermybatis.repository.MemberMapper;
+package com.example.coffee.service;
+import com.example.coffee.common.ResultCode;
+import com.example.coffee.common.config.JwtTokenProvider;
+import com.example.coffee.model.user.CreateMemberDTO;
+import com.example.coffee.model.user.LoginRequestDTO;
+import com.example.coffee.repository.MemberMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import com.example.springusermybatis.common.Result;
+import com.example.coffee.common.Result;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;

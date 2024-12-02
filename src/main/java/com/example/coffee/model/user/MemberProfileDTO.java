@@ -1,4 +1,4 @@
-package com.example.springusermybatis.model;
+package com.example.coffee.model.user;
 
 
 import io.swagger.v3.oas.annotations.media.Schema;

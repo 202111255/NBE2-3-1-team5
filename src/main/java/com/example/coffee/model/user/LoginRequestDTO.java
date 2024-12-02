@@ -1,4 +1,4 @@
-package com.example.springusermybatis.model;
+package com.example.coffee.model.user;
 
 import lombok.Getter;
 

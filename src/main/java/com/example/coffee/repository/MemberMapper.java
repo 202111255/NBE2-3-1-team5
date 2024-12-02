@@ -1,6 +1,6 @@
-package com.example.springusermybatis.repository;
+package com.example.coffee.repository;
 
-import com.example.springusermybatis.model.CreateMemberDTO;
+import com.example.coffee.model.user.CreateMemberDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
