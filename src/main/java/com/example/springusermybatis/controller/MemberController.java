@@ -1,15 +1,14 @@
 package com.example.springusermybatis.controller;
 
 
-
-import com.example.springusermybatis.common.ResultCode;
 import com.example.springusermybatis.model.CreateMemberDTO;
 import com.example.springusermybatis.model.LoginRequestDTO;
 import com.example.springusermybatis.service.MemberService;
 import jakarta.validation.Valid;
-import org.apache.tomcat.util.net.openssl.ciphers.Authentication;
+import com.example.springusermybatis.common.Result;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.access.prepost.PreAuthorize;
+
 import org.springframework.web.bind.annotation.*;
 
 @RestController

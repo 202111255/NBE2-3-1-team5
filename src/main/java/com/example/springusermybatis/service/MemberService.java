@@ -7,6 +7,7 @@ import com.example.springusermybatis.repository.MemberMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import com.example.springusermybatis.common.Result;
 
 import java.time.LocalDateTime;
 import java.util.HashMap;
