@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+    <mapper namespace="com.example.coffee.repository.OrderMapper">
+        <!-- 한 건의 주문조회 -->
+        <resultMap id="orderResultMap" type="order">
+            <id property="orderId" column="orderId"/>
+            <result property="memberId" column="memberId"/>
+            <result property="address" column="address"/>
+            <result property="zipcode" column="zipcode"/>
+            <result property="totalQuantity" column="totalQuantity"/>
+            <result property="totalPrice" column="totalPrice"/>
+            <result property="isCancelled" column="isCancelled"/>
+            <result property="createdAt" column="createdAt"/>
+            <result property="updatedAt" column="updatedAt"/>
+
+            <!-- orderListResponseDTOS (OrderListResponseDTO 매핑) -->
+            <collection property="orderListResponseDTOS" ofType="orderList">
+                <result property="orderItemId" column="orderItemId"/>
+                <result property="productId" column="productId"/>
+                <result property="orderId" column="orderId"/>
+                <result property="quantity" column="quantity"/>
+                <result property="price" column="price"/>
+            </collection>
+        </resultMap>
+
+        <select id="getOrderById" resultMap="orderResultMap">
+            SELECT
+                o.orderId AS orderId,
+                o.memberId AS memberId,
+                o.address AS address,
+                o.zipcode AS zipcode,
+                o.totalQuantity AS totalQuantity,
+                o.totalPrice AS totalPrice,
+                o.isCancelled AS isCancelled,
+                o.createdAt AS createdAt,
+                o.updatedAt AS updatedAt,
+                ol.orderItemId AS orderItemId,
+                ol.productId AS productId,
+                ol.orderId AS orderId,
+                ol.quantity AS quantity,
+                ol.price AS price
+            FROM `order` o
+                LEFT JOIN order_list ol ON o.orderId = ol.orderId
+            WHERE o.orderId = #{orderId};
+        </select>
+
+
+
+    </mapper>
