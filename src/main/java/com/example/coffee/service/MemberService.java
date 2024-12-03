@@ -1,6 +1,6 @@
 package com.example.coffee.service;
 import com.example.coffee.common.ResultCode;
-import com.example.coffee.common.config.JwtTokenProvider;
+import com.example.coffee.common.jwt.JwtTokenProvider;
 import com.example.coffee.model.user.CreateMemberDTO;
 import com.example.coffee.model.user.LoginRequestDTO;
 import com.example.coffee.repository.MemberMapper;
