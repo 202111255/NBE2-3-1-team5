@@ -13,4 +13,8 @@ public interface MemberMapper {
     CreateMemberDTO findEmail(String email);
 
     CreateMemberDTO userInfo(Long memberId);
+
+    int modifyRefreshToken(CreateMemberDTO createMemberDTO);
+
+    String findRefreshToken(Long memberId);
 }

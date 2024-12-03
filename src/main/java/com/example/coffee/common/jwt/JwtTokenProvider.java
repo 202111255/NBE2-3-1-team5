@@ -13,7 +13,8 @@ import java.util.Date;
 public class JwtTokenProvider {
 
     private final SecretKey secretKey; // 동적으로 생성된 키
-    private final long validityInMilliseconds = 360000; // 1시간 (예제 값)
+    private final long validityInMilliseconds = 60000; // 6분
+    private final long refreshTokenValidityInMilliseconds = 604800000; // 7일
 
     // 키 생성자
     public JwtTokenProvider() {
@@ -25,6 +26,20 @@ public class JwtTokenProvider {
         Claims claims = Jwts.claims().setSubject(String.valueOf(id));
         Date now = new Date();
         Date validity = new Date(now.getTime() + validityInMilliseconds);
+
+        return Jwts.builder()
+                .setClaims(claims)
+                .setIssuedAt(now)
+                .setExpiration(validity)
+                .signWith(secretKey, SignatureAlgorithm.HS256) // 동적 키 사용
+                .compact();
+    }
+
+    // JWT (refreshToken) 생성
+    public String createRefreshToken(long id) {
+        Claims claims = Jwts.claims().setSubject(String.valueOf(id)); // 이메일 정보 저장
+        Date now = new Date();
+        Date validity = new Date(now.getTime() + refreshTokenValidityInMilliseconds);
 
         return Jwts.builder()
                 .setClaims(claims)

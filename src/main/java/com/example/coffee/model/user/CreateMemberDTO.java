@@ -40,11 +40,18 @@ public class CreateMemberDTO {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-
+    // refreshToken 컬럼
+    private String refreshToken;
 
     public void setPassword(String password) {
         this.password = password;
     }
+
+    // refreshToken 변경
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
