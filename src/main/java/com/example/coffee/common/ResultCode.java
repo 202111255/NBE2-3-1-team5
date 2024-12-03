@@ -52,6 +52,9 @@ public enum ResultCode {
     ORDER_ALREADY_CANCELLED(400, "이미 취소된 주문입니다."),
     PAYMENT_FAILED(400, "결제에 실패했습니다."),
     ORDER_NOT_ELIGIBLE_FOR_CANCEL(403, "이 주문은 취소할 수 없습니다."),
+    INVALID_PARAMETER(400, "잘못된 요청입니다."),
+
+
 
     //  리뷰 관련
     REVIEW_NOT_ALLOWED(403, "결제를 한 이력이 없어 리뷰를 작성할 수 없습니다."),
@@ -66,8 +69,8 @@ public enum ResultCode {
 
     // 500 Internal Server Error
     DB_ERROR(500, "DB오류 입니다."),
-
-    ETC_ERROR(500, "알 수 없는 이유로 실패했습니다.");
+    ETC_ERROR(500, "알 수 없는 이유로 실패했습니다."),
+    SYSTEM_ERROR(500, "시스템 에러로 실패했습니다");
 
 
     private int code;
