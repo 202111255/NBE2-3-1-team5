@@ -1,4 +1,4 @@
-package com.example.coffee.controller;
+package com.example.coffee.controller.user;
 
 
 import com.example.coffee.model.user.CreateMemberDTO;
