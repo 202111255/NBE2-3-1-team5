@@ -1,5 +1,6 @@
 package com.example.coffee.model.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
@@ -23,6 +24,7 @@ public class CreateMemberDTO {
     @Email(message = "유효한 이메일 형식이어야 합니다.")
     private String email;
 
+    @JsonIgnore
     @Pattern(
             regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$",
             message = "비밀번호는 최소 하나의 문자, 숫자, 특수 문자를 포함해야 합니다."

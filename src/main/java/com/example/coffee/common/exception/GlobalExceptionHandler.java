@@ -2,6 +2,7 @@ package com.example.coffee.common.exception;
 
 import com.example.coffee.common.Result;
 import com.example.coffee.common.ResultCode;
+import io.jsonwebtoken.JwtException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.FieldError;
@@ -50,6 +51,7 @@ public class GlobalExceptionHandler {
         Result<Map<String, String>> result = new Result<>(ResultCode.MISSING_PARAMETER, errors);
         return ResponseEntity.status(ResultCode.MISSING_PARAMETER.getCode()).body(result);
     }
+
 
 
 

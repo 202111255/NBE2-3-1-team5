@@ -12,5 +12,5 @@ public interface MemberMapper {
 
     CreateMemberDTO findEmail(String email);
 
-    CreateMemberDTO userInfo(long memberId);
+    CreateMemberDTO userInfo(Long memberId);
 }

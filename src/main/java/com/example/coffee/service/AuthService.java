@@ -1,4 +1,5 @@
 package com.example.coffee.service;
+
 import com.example.coffee.common.ResultCode;
 import com.example.coffee.common.jwt.JwtTokenProvider;
 import com.example.coffee.model.user.CreateMemberDTO;
@@ -15,13 +16,12 @@ import java.util.Map;
 
 @AllArgsConstructor
 @Service
-public class MemberService {
+public class AuthService {
     private final MemberMapper memberMapper;
     private final PasswordEncoder passwordEncoder;
     private final JwtTokenProvider jwtTokenProvider;
 
-
-    public Result signupMember(CreateMemberDTO createMemberDTO) {
+    public Result signup(CreateMemberDTO createMemberDTO) {
         try {
             if (memberMapper.isEmailExists(createMemberDTO.getEmail()) > 0) {
                 return new Result(ResultCode.EMAIL_ALREADY_EXISTS);
@@ -30,13 +30,11 @@ public class MemberService {
             LocalDateTime now = LocalDateTime.now();
             createMemberDTO.setCreatedAt(now);
             createMemberDTO.setUpdatedAt(now);
-//            createMemberDTO.setRole("ROLE_NORMAL");
             String aPassword = passwordEncoder.encode(createMemberDTO.getPassword());
             createMemberDTO.setPassword(aPassword);
             memberMapper.signup(createMemberDTO);
 
             return new Result(ResultCode.SUCCESS, createMemberDTO);
-
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new Result(ResultCode.FAIL_TO_SAVE_USER);
@@ -50,7 +48,6 @@ public class MemberService {
                 return new Result(ResultCode.NOT_EXISTS_USER);
             }
 
-
             if (!passwordEncoder.matches(loginRequestDTO.getPassword(), member.getPassword())) {
                 return new Result(ResultCode.INVALID_USER_PASSWORD);
             }
@@ -58,8 +55,7 @@ public class MemberService {
             // 토큰 생성
             String token = jwtTokenProvider.createToken(member.getMemberId());
             Map<String, Object> responseData = new HashMap<>();
-
-            responseData.put("member", Map.of(
+            responseData.put("user", Map.of(
                     "email", member.getEmail(),
                     "name", member.getName() != null ? member.getName() : "N/A",
                     "address", member.getAddress() != null ? member.getAddress() : "N/A",
@@ -75,56 +71,16 @@ public class MemberService {
         }
     }
 
-    public Result userInfo(String token) {
-        try{
-            token = token.substring(7);
-            long userId= jwtTokenProvider.getId(token);
-
+    public Result getUserProfile(Long userId) {
+        try {
             CreateMemberDTO member = memberMapper.userInfo(userId);
             if (member == null) {
                 return new Result(ResultCode.NOT_EXISTS_USER);
             }
-            return new Result(ResultCode.SUCCESS, Map.of(
-                    "email", member.getEmail(),
-                    "name", member.getName() != null ? member.getName() : "N/A"
-            ));
-
-
+            return new Result(ResultCode.SUCCESS, member);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new Result(ResultCode.DB_ERROR);
         }
     }
-
-//    public Result login(LoginRequestDTO loginRequestDTO) {
-////        try {
-//            CreateMemberDTO member = memberMapper.findEmail(loginRequestDTO.getEmail());
-//            if(member == null) {
-//                return  new Result(ResultCode.NOT_EXISTS_USER);
-//            }
-//            System.out.println("logindto "+ loginRequestDTO.getPassword());
-//            System.out.println("memberdto " + member.getPassword());
-//
-//            if (!passwordEncoder.matches(loginRequestDTO.getPassword(), member.getPassword())) {
-//                return new Result(ResultCode.INVALID_USER_PASSWORD);
-//            }
-//            //토큰생성
-//            String token = jwtTokenProvider.createToken(member.getMemberId());
-//            Map<String, Object> responseData = new HashMap<>();
-//
-//            responseData.put("member" , Map.of(
-//                    "email", member.getEmail(),
-//                    "name", member.getName(),
-//                    "address",member.getAddress(),
-//                    "zipcode", member.getZipcode(),
-//                    "createdAt", member.getCreatedAt(),
-//                    "updatedAt", member.getUpdatedAt()
-//            ));
-//            responseData.put("token", token);
-//            return new Result(ResultCode.SUCCESS, responseData);
-////        } catch (Exception e ){
-////            System.out.println(e.getMessage());
-////            return new Result(ResultCode.DB_ERROR);
-////        }
-//    }
 }

@@ -1,5 +1,7 @@
 package com.example.coffee.common.config;
 
+import com.example.coffee.common.jwt.JwtAuthenticationFilter;
+import com.example.coffee.common.jwt.JwtTokenProvider;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
