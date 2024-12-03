@@ -1,14 +1,11 @@
-package com.example.coffee.controller;
+package com.example.coffee.controller.cart;
 
 import com.example.coffee.common.Result;
 import com.example.coffee.model.cart.CartListDTO;
 import com.example.coffee.model.cart.CartDTO;
-import com.example.coffee.model.cart.ViewCartListDTO;
 import com.example.coffee.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.ArrayList;
 
 @RestController
 @RequestMapping("/api")
