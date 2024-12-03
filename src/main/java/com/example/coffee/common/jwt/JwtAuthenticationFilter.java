@@ -1,4 +1,4 @@
-package com.example.coffee.common.config;
+package com.example.coffee.common.jwt;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -7,6 +7,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
 
@@ -24,9 +25,10 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if(token !=null && jwtTokenProvider.validateToken(token)) {
             long userId = jwtTokenProvider.getId(token);
 
+            UserDetails userDetails = new CustomUserDetails(userId);
             // Spring Security 인증 객체 설정
             UsernamePasswordAuthenticationToken authentication = new UsernamePasswordAuthenticationToken(
-                    userId, null, null // 권한은 필요 시 추가
+                    userId, null, userDetails.getAuthorities() // 권한은 필요 시 추가
             );
             authentication.setDetails(new WebAuthenticationDetailsSource().buildDetails(request));
 
