@@ -26,6 +26,10 @@ public enum ResultCode {
     INVALID_USER_PASSWORD(400, "유효하지 않은 비밀번호입니다."),
     USER_ACCOUNT_LOCKED(403, "사용자 계정이 잠겼습니다."),
 
+    //토큰
+    TOKEN_EXPIRED(401, "토큰이 만료되었습니다."),
+    INVALID_TOKEN(401, "유효하지 않은 토큰입니다."),
+
 
     //  주소록 관련
     ADDRESS_BOOK_NOT_FOUND(404, "주소록 정보를 찾을 수 없습니다."),
