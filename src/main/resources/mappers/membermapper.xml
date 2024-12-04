@@ -51,7 +51,7 @@
     <delete id="userDelete" parameterType="Long" >
         delete from member where memberId = #{memberId};
     </delete>
-</mapper>
+
 
     <!-- RefreshToken 변경-->
     <update id="modifyRefreshToken" parameterType="member">
@@ -66,5 +66,5 @@
         where memberId = #{memberId}
     </select>
 
-    </mapper>
+</mapper>
 
