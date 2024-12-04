@@ -1,6 +1,7 @@
 package com.example.coffee.repository;
 
 import com.example.coffee.model.user.CreateMemberDTO;
+import com.example.coffee.model.user.UpdateMemberDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
@@ -14,7 +15,12 @@ public interface MemberMapper {
 
     CreateMemberDTO userInfo(Long memberId);
 
+    void userUpdate(UpdateMemberDTO updateMemberDTO);
+
+    void userDelete(Long memberId);
+
     int modifyRefreshToken(CreateMemberDTO createMemberDTO);
 
     String findRefreshToken(Long memberId);
+
 }

@@ -4,6 +4,7 @@ import com.example.coffee.common.ResultCode;
 import com.example.coffee.common.jwt.JwtTokenProvider;
 import com.example.coffee.model.user.CreateMemberDTO;
 import com.example.coffee.model.user.LoginRequestDTO;
+import com.example.coffee.model.user.UpdateMemberDTO;
 import com.example.coffee.repository.MemberMapper;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
@@ -120,6 +121,27 @@ public class AuthService {
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new Result(ResultCode.DB_ERROR);
+        }
+    }
+
+    public Result updateUser(Long userId, UpdateMemberDTO updateMemberDTO) {
+        try {
+            updateMemberDTO.setMemberId(userId);
+            memberMapper.userUpdate(updateMemberDTO);
+            return new Result(ResultCode.SUCCESS, "사용자 정보가 업데이트 되었습니다.");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return new Result(ResultCode.DB_ERROR, "업데이트 실패했습니다.");
+        }
+    }
+
+    public Result deleteUser(Long userId) {
+        try{
+            memberMapper.userDelete(userId);
+            return new Result(ResultCode.SUCCESS, "삭제되었습니다.");
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+            return new Result(ResultCode.DB_ERROR, "삭제 실패했습니다.");
         }
     }
 

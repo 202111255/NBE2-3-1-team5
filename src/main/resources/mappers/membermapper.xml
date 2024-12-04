@@ -34,11 +34,24 @@
     </select>
 
 
-    <select id="userInfo" parameterType="long" resultType="member">
+
+    <select id="userInfo" parameterType="Long" resultType="member">
         select memberId, email, name,address, zipcode, createdAt, updatedAt
         from member
         where memberId =  #{memberId};
     </select>
+
+    <update id="userUpdate" parameterType="UpdateMemberDTO">
+        update member
+        set name = #{name}, address = #{address}, zipcode = #{zipcode}
+        where memberId = #{memberId};
+    </update>
+
+
+    <delete id="userDelete" parameterType="Long" >
+        delete from member where memberId = #{memberId};
+    </delete>
+</mapper>
 
     <!-- RefreshToken 변경-->
     <update id="modifyRefreshToken" parameterType="member">
@@ -54,3 +67,4 @@
     </select>
 
     </mapper>
+
