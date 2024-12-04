@@ -13,7 +13,7 @@ import java.util.Date;
 public class JwtTokenProvider {
 
     private final SecretKey secretKey; // 동적으로 생성된 키
-    private final long validityInMilliseconds = 60000; // 6분
+    private final long validityInMilliseconds = 3600000; // 6분
     private final long refreshTokenValidityInMilliseconds = 604800000; // 7일
 
     // 키 생성자

@@ -29,9 +29,9 @@ public class AuthController {
         return authService.login(loginRequestDTO, response);
     }
 
-    @PostMapping("/logout")
-    public Result logout(@RequestHeader("Authorization") String token, HttpServletResponse response) {
-        return authService.logout(token, response);
+    @PutMapping("/logout")
+    public Result logout(@AuthenticationPrincipal Long userId, HttpServletResponse response) {
+        return authService.logout(userId, response);
     }
 
     @GetMapping("/profile")

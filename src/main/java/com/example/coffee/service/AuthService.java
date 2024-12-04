@@ -87,11 +87,8 @@ public class AuthService {
     }
 
     // refreshToken DB 값 Null AND 쿠키 값 삭제
-    public Result logout(String token, HttpServletResponse response) {
+    public Result logout(Long userId, HttpServletResponse response) {
         try{
-            token = token.substring(7);
-            long userId= jwtTokenProvider.getId(token);
-
             CreateMemberDTO member = memberMapper.userInfo(userId);
             if (member == null) {
                 return new Result(ResultCode.NOT_EXISTS_USER);
@@ -100,7 +97,7 @@ public class AuthService {
             member.setRefreshToken(null);
             memberMapper.modifyRefreshToken(member);
 
-            // Cookie에 refreshToken 값 추가
+            // Cookie에 기존 refreshToken 만료 시간(0) 변경
             Cookie cookie = new Cookie(cookieName, null);
             cookie.setMaxAge(0);
             response.addCookie(cookie);
@@ -128,38 +125,32 @@ public class AuthService {
 
     // refreshToken이 DB refreshToken과 일치하면 accessToken 재발급
     public Result reCreateToken(HttpServletRequest request) {
-        try{
-            Cookie[] cookies = request.getCookies();
-            long memberId = 0;
-            String refreshToken = null;
-            // 쿠키(refreshToken)을 통해서 memberId / refreshToken 값 추출
-            for (Cookie cookie : cookies){
-                if(cookie.getName().equals(cookieName)){
-                    memberId = jwtTokenProvider.getId(cookie.getValue());
-                    refreshToken = cookie.getValue();
-                }
-            }
 
-            if(memberId != 0){
-                System.out.println("memberId : " + memberId);
-                System.out.println("Request refreshToken : "+refreshToken);
-                System.out.println("DB refreshToken : "+memberMapper.findRefreshToken(memberId));
-
-                // 쿠키와 DB의 refreshToken 값이 같으면 accessToken 재발급
-                if(passwordEncoder.matches(refreshToken,memberMapper.findRefreshToken(memberId))){
-                    String token = jwtTokenProvider.createToken(memberId);
-                    Map<String, Object> responseData = new HashMap<>();
-                    responseData.put("token", token);
-                    return new Result(ResultCode.SUCCESS, responseData);
-                } else {
-                    return new Result(ResultCode.INVALID_TOKEN);
-                }
-            } else {
-                return new Result(ResultCode.TOKEN_EXPIRED);
+        Cookie[] cookies = request.getCookies();
+        long memberId = 0;
+        String refreshToken = null;
+        // 쿠키(refreshToken)을 통해서 memberId / refreshToken 값 추출
+        for (Cookie cookie : cookies) {
+            if (cookie.getName().equals(cookieName)) {
+                memberId = jwtTokenProvider.getId(cookie.getValue());
+                refreshToken = cookie.getValue();
             }
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-            return new Result(ResultCode.DB_ERROR);
         }
+
+        if (memberId != 0) {
+            // 쿠키와 DB의 refreshToken 값이 같으면 accessToken 재발급
+            if (passwordEncoder.matches(refreshToken, memberMapper.findRefreshToken(memberId))) {
+                String token = jwtTokenProvider.createToken(memberId);
+                Map<String, Object> responseData = new HashMap<>();
+                responseData.put("token", token);
+
+                return new Result(ResultCode.SUCCESS, responseData);
+            } else {
+                return new Result(ResultCode.INVALID_TOKEN);
+            }
+        } else {
+            return new Result(ResultCode.TOKEN_EXPIRED);
+        }
+
     }
 }

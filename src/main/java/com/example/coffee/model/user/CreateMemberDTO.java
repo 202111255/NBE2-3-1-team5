@@ -41,6 +41,7 @@ public class CreateMemberDTO {
     private LocalDateTime updatedAt;
 
     // refreshToken 컬럼
+    @JsonIgnore
     private String refreshToken;
 
     public void setPassword(String password) {
