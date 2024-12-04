@@ -2,6 +2,7 @@ package com.example.coffee.controller.user;
 
 import com.example.coffee.model.user.CreateMemberDTO;
 import com.example.coffee.model.user.LoginRequestDTO;
+import com.example.coffee.model.user.UpdateMemberDTO;
 import com.example.coffee.service.AuthService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,4 +30,13 @@ public class AuthController {
         return authService.getUserProfile(userId);
     }
 
+    @PutMapping("/update")
+    public Result updateUser(@AuthenticationPrincipal Long userId, @RequestBody UpdateMemberDTO updateMemberDTO){
+        return authService.updateUser(userId, updateMemberDTO);
+    }
+
+    @DeleteMapping("/delete")
+    public Result deleteUser(@AuthenticationPrincipal Long userId) {
+        return authService.deleteUser(userId);
+    }
 }
