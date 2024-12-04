@@ -5,332 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ad3457d1-f4cb-4a62-baf2-001eb59bc023" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../AOP01/src/main/java/com/example/aop/config/BasicAdvice1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP01/src/main/java/com/example/aop/config/BasicAdvice2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP01/src/main/java/com/example/aop/model/Target.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP01/src/main/java/com/example/aop/model/TargetService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP02/src/main/java/com/example/aop/config/PerformanceAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP02/src/main/java/com/example/aop/model/Hello.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP02/src/main/java/com/example/aop/model/HelloBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP03/src/main/java/com/example/aop/config/BasicAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP03/src/main/java/com/example/aop/config/CustomPointcutConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP03/src/main/java/com/example/aop/model/Target.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP03/src/main/java/com/example/aop/model/TargetAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP03/src/main/java/com/example/aop/model/Todo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP03/src/main/java/com/example/aop/model/TodoAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP04/src/main/java/com/example/aop/config/BasicAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP04/src/main/java/com/example/aop/model/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP04/src/main/java/com/example/aop/model/ListAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../AOP04/src/main/java/com/example/aop/model/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/java/com/example/board/controller/BoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/java/com/example/board/dao/BoardDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/java/com/example/board/dto/BoardTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/java/com/example/board/mapper/BoardMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/mappers/mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/css/board.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/btn_comment_bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/btn_search_bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/captcha.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/demo_map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot27.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot29.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot31.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot35.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot37.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot39.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot41.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot42.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot43.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot44.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/emoticon/emot50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_facebook.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_faq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_file.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_file_mp3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_file_vod.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_hot.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_new.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_re1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_re2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_sct.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/icon_twitter.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/test_image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/resources/static/images/test_image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/webapp/WEB-INF/views/design_simple1/board_delete1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/webapp/WEB-INF/views/design_simple1/board_delete1_ok.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/webapp/WEB-INF/views/design_simple1/board_list1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/webapp/WEB-INF/views/design_simple1/board_modify1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/webapp/WEB-INF/views/design_simple1/board_modify1_ok.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/webapp/WEB-INF/views/design_simple1/board_view1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/webapp/WEB-INF/views/design_simple1/board_write1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Board02/src/main/webapp/WEB-INF/views/design_simple1/board_write1_ok.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Di02/src/main/java/com/example/di/BoardDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Di02/src/main/java/com/example/di/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/common/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/common/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/common/entities/CommonEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/product/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/product/dto/CreateProductDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/product/model/ProductEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/product/repository/ProductRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/product/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring-develop/src/main/java/com/example/spring/user/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring2/src/main/java/com/example/spring2/common/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring2/src/main/java/com/example/spring2/common/ResultCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring2/src/main/java/com/example/spring2/product/controller/ProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring2/src/main/java/com/example/spring2/product/model/ProductDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring2/src/main/java/com/example/spring2/product/repository/ProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring2/src/main/java/com/example/spring2/product/service/ProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Spring2/src/main/resources/mappers/productmapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../Springboot-developer/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../TestSecuriaty/src/main/java/com/example/testsecuriaty/controller/MainController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../albummybatisboard01/src/main/java/com/example/album/dao/AlbumDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../albummybatisboard01/src/main/java/com/example/album/dto/AlbumTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../albummybatisboard01/src/main/java/com/example/album/mapper/AlbumMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../albummybatisboard01/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/java/com/example/board/controller/BoardController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/css/board.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/btn_comment_bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/btn_search_bg.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/captcha.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/demo_map.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot01.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot02.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot03.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot04.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot05.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot06.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot07.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot08.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot09.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot10.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot11.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot12.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot13.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot14.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot15.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot16.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot17.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot19.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot20.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot21.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot22.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot23.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot25.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot26.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot27.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot28.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot29.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot30.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot31.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot32.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot33.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot34.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot35.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot37.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot38.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot39.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot40.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot41.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot42.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot43.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot44.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot45.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot46.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot47.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot49.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/emoticon/emot50.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_facebook.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_faq.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_file.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_file_mp3.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_file_vod.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_hot.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_new.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_re1.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_re2.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_sct.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/icon_twitter.gif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/test_image1.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/resources/static/images/test_image2.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/webapp/WEB-INF/views/design_simple0/board_delete1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/webapp/WEB-INF/views/design_simple0/board_list1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/webapp/WEB-INF/views/design_simple0/board_modify1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/webapp/WEB-INF/views/design_simple0/board_view1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../board01/src/main/webapp/WEB-INF/views/design_simple0/board_write1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../boot02/src/main/java/com/example/boot02/CustomListener1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../boot02/src/main/java/com/example/boot02/CustomListener2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../boot02/src/main/java/com/example/boot02/config/BeanCofig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../boot02/src/main/java/com/example/boot02/model/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../boot02/src/main/java/com/example/boot02/model/User2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../boot02/src/main/resources/data.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/java/com/example/config/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/java/com/example/model/DatabaseDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/java/com/example/model/HelloBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/java/com/example/model/MySQLDatabaseDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/java/com/example/model/OracleDatabaseDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/java/com/example/model2/BoardTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/java/com/example/model2/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/java/com/example/service/DatabaseService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di03/src/main/resources/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di/BoardTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di02/BoardTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di02/Di04Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di03/BoardTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di03/Di04Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di03/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di04/BoardListTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di04/BoardTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di04/Di04Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di05/BoardMapTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di05/BoardTo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/di05/Di04Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/lifecycle/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/lifecycle/CustomBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/lifecycle/Di04Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/java/com/example/lifecycle/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/resources/context.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/resources/context2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/resources/context3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di04/src/main/resources/lifecycle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di/Hello.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di/HelloBean1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di/HelloBean2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di02/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di02/Di05Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di02/HelloBean1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di03/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di03/Di05Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di03/HelloBean.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di04/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di04/BoardTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di04/Di05Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di04/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di05/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di05/BoardTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di05/Di05Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di06/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di06/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di06/BoardTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di06/Di05Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di06/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di07/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di07/BeanConfig1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di07/BeanConfig2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di07/Di05Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di07/HelloBean1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di07/HelloBean2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di08/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di08/BoardDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di08/Di05Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/di08/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/lifecycle/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/lifecycle/BeanConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/lifecycle/CustomBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/lifecycle/Di05Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../di05/src/main/java/com/example/lifecycle/WriteAction.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../jdbc01/src/main/java/com/example/jdbc/Jdbc02Application.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../jdbc02/src/main/java/com/example/jdbc/model/DeptDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../jdbc02/src/main/java/com/example/jdbc/model/DeptTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../jdbc02/src/main/java/com/example/jdbc/model/JdbcDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../jdbc03/src/main/java/com/example/jdbc/DeptTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../jpa01/src/main/java/com/example/jpa/domain/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../jpa01/src/main/resources/META-INF/persistence.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis01/src/main/java/com/example/mybatis/model/DeptTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis01/src/main/resources/mapper/mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis01/src/main/resources/mapper/mapper2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis02/src/main/java/com/example/mybatis/dao/MybatisRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis02/src/main/java/com/example/mybatis/dto/DeptTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis02/src/main/java/com/example/mybatis/service/MybatisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis02/src/main/resources/mappers/mapper1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis02/src/main/resources/mappers/mapper2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis03/src/main/java/com/example/mybatis/dto/DeptTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis03/src/main/java/com/example/mybatis/mapper/DeptMybatisMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis03/src/main/java/com/example/mybatis/service/DeptMybatisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis03/src/main/resources/mappers/mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis04/src/main/java/com/example/mybatis/dto/EmpTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis04/src/main/java/com/example/mybatis/mapper/EmpMybatisMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../mybatis04/src/main/java/com/example/mybatis/service/EmpMybatisService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rest01/src/main/java/com/example/rest/controller/RestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rest01/src/main/java/com/example/rest/dao/EmpDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rest01/src/main/java/com/example/rest/dto/EmpTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rest01/src/main/java/com/example/rest/mapper/EmpMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../rest01/src/main/resources/mappers/empmapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../swagger01/src/main/java/com/example/swagger01/config/SwaggerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../swagger01/src/main/java/com/example/swagger01/controller/MyRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web01/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web01/src/main/resources/static/index.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web02/src/main/webapp/WEB-INF/views/hello1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web03/src/main/java/com/example/web/controller/ConfigController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web03/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web03/src/main/webapp/WEB-INF/views/form.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web03/src/main/webapp/WEB-INF/views/form_ok.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web03/src/main/webapp/WEB-INF/views/hello1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web03/src/main/webapp/WEB-INF/views/hello2.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web04/src/main/java/com/example/web/controller/ConfigController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web04/src/main/java/com/example/web/model/JdbcDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web04/src/main/webapp/WEB-INF/views/jdbc1.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/java/com/example/web/controller/JdbcController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/java/com/example/web/controller/ZipcodeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/java/com/example/web/dao/JdbcDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/java/com/example/web/dao/ZipcodeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/java/com/example/web/mapper/JdbcMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/java/com/example/web/mapper/ZipcodeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/java/com/example/web/model/ZipcodeTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/resources/mappers/mapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/webapp/WEB-INF/views/zipcode.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../web05/src/main/webapp/WEB-INF/views/zipcode_ok.jsp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../zipcode03/src/main/java/com/example/zipcode/controller/ZipcodeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../zipcode03/src/main/java/com/example/zipcode/model/ZipcodeDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../zipcode03/src/main/java/com/example/zipcode/model/ZipcodeTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../zipcode03/src/main/resources/static/index.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../zipcode03/src/main/webapp/WEB-INF/views/zipcode.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../di2" beforeDir="false" afterPath="$PROJECT_DIR$/../di2" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -342,8 +16,50 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="NBE2-3-1-team5" type="f1a62948:ProjectNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitToolBoxStore">
+    <option name="recentBranches">
+      <RecentBranches>
+        <option name="branchesForRepo">
+          <list>
+            <RecentBranchesForRepo>
+              <option name="branches">
+                <list>
+                  <RecentBranch>
+                    <option name="branchName" value="feat/user/2" />
+                    <option name="lastUsedInstant" value="1733227270" />
+                  </RecentBranch>
+                  <RecentBranch>
+                    <option name="branchName" value="main" />
+                    <option name="lastUsedInstant" value="1733227269" />
+                  </RecentBranch>
+                </list>
+              </option>
+              <option name="repositoryRootUrl" value="file://$PROJECT_DIR$" />
+            </RecentBranchesForRepo>
+          </list>
+        </option>
+      </RecentBranches>
+    </option>
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
@@ -353,31 +69,7 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.Build NBE2-3-1-team5-main.executor": "Run",
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.Coffee.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/yanghandong/Desktop/java/SpringProject/NBE2-3-1-team5",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
-  }
-}]]></component>
+
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -401,8 +93,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fdfe4dae3a2d-intellij.indexing.shared.core-IU-243.21565.193" />
-        <option value="bundled-js-predefined-d6986cc7102b-e768b9ed790e-JavaScript-IU-243.21565.193" />
+        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
       </set>
     </attachedChunks>
   </component>
@@ -415,6 +107,10 @@
       <option name="presentableId" value="Default" />
       <updated>1733123385588</updated>
       <workItem from="1733123387637" duration="9306000" />
+      <workItem from="1733214808376" duration="1994000" />
+      <workItem from="1733219214050" duration="8893000" />
+      <workItem from="1733271374521" duration="1222000" />
+      <workItem from="1733277920432" duration="8339000" />
     </task>
     <servers />
   </component>

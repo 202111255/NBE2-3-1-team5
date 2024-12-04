@@ -18,4 +18,9 @@ public interface MemberMapper {
     void userUpdate(UpdateMemberDTO updateMemberDTO);
 
     void userDelete(Long memberId);
+
+    int modifyRefreshToken(CreateMemberDTO createMemberDTO);
+
+    String findRefreshToken(Long memberId);
+
 }

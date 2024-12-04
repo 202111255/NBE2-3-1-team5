@@ -52,3 +52,19 @@
         delete from member where memberId = #{memberId};
     </delete>
 </mapper>
+
+    <!-- RefreshToken 변경-->
+    <update id="modifyRefreshToken" parameterType="member">
+        update member
+        set refreshToken = #{refreshToken}
+        where memberId = #{memberId}
+    </update>
+
+    <select id="findRefreshToken" parameterType="long" resultType="String">
+        select refreshToken
+        from member
+        where memberId = #{memberId}
+    </select>
+
+    </mapper>
+
