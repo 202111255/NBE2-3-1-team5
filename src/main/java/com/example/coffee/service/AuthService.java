@@ -2,8 +2,9 @@ package com.example.coffee.service;
 
 import com.example.coffee.common.ResultCode;
 import com.example.coffee.common.jwt.JwtTokenProvider;
-import com.example.coffee.model.user.CreateMemberDTO;
+import com.example.coffee.model.user.RequestMemberDTO;
 import com.example.coffee.model.user.LoginRequestDTO;
+import com.example.coffee.model.user.ResponseMemberDTO;
 import com.example.coffee.model.user.UpdateMemberDTO;
 import com.example.coffee.repository.MemberMapper;
 import jakarta.servlet.http.Cookie;
@@ -26,7 +27,7 @@ public class AuthService {
     private final JwtTokenProvider jwtTokenProvider;
     private final String cookieName = "REFRESHTOKEN";
 
-    public Result signup(CreateMemberDTO createMemberDTO) {
+    public Result signup(RequestMemberDTO createMemberDTO) {
         try {
             if (memberMapper.isEmailExists(createMemberDTO.getEmail()) > 0) {
                 return new Result(ResultCode.EMAIL_ALREADY_EXISTS);
@@ -48,7 +49,7 @@ public class AuthService {
 
     public Result login(LoginRequestDTO loginRequestDTO, HttpServletResponse response) {
         try {
-            CreateMemberDTO member = memberMapper.findEmail(loginRequestDTO.getEmail());
+            RequestMemberDTO member = memberMapper.findEmail(loginRequestDTO.getEmail());
             if (member == null) {
                 return new Result(ResultCode.NOT_EXISTS_USER);
             }
@@ -70,15 +71,14 @@ public class AuthService {
             member.setRefreshToken(passwordEncoder.encode(refreshToken));
             memberMapper.modifyRefreshToken(member);
 
+            ResponseMemberDTO responseDTO = new ResponseMemberDTO(
+                    member.getMemberId(),
+                    member.getName(), member.getEmail(), member.getAddress(),
+                    member.getZipcode(), member.getCreatedAt(), member.getUpdatedAt()
+            );
+
             Map<String, Object> responseData = new HashMap<>();
-            responseData.put("user", Map.of(
-                    "email", member.getEmail(),
-                    "name", member.getName() != null ? member.getName() : "N/A",
-                    "address", member.getAddress() != null ? member.getAddress() : "N/A",
-                    "zipcode", member.getZipcode() != null ? member.getZipcode() : "N/A",
-                    "createdAt", member.getCreatedAt() != null ? member.getCreatedAt().toString() : "N/A",
-                    "updatedAt", member.getUpdatedAt() != null ? member.getUpdatedAt().toString() : "N/A"
-            ));
+            responseData.put("user",responseDTO);
             responseData.put("token", token);
             return new Result(ResultCode.SUCCESS, responseData);
         } catch (Exception e) {
@@ -90,7 +90,7 @@ public class AuthService {
     // refreshToken DB 값 Null AND 쿠키 값 삭제
     public Result logout(Long userId, HttpServletResponse response) {
         try{
-            CreateMemberDTO member = memberMapper.userInfo(userId);
+            RequestMemberDTO member = memberMapper.userInfo(userId);
             if (member == null) {
                 return new Result(ResultCode.NOT_EXISTS_USER);
             }
@@ -113,11 +113,16 @@ public class AuthService {
 
     public Result getUserProfile(Long userId) {
         try {
-            CreateMemberDTO member = memberMapper.userInfo(userId);
+            RequestMemberDTO member = memberMapper.userInfo(userId);
             if (member == null) {
                 return new Result(ResultCode.NOT_EXISTS_USER);
             }
-            return new Result(ResultCode.SUCCESS, member);
+            ResponseMemberDTO responseDTO = new ResponseMemberDTO(
+                    member.getMemberId(),
+                    member.getName(), member.getEmail(), member.getAddress(),
+                    member.getZipcode(), member.getCreatedAt(), member.getUpdatedAt()
+            );
+            return new Result(ResultCode.SUCCESS, responseDTO);
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new Result(ResultCode.DB_ERROR);

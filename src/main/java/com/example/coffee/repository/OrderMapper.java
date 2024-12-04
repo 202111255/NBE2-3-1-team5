@@ -1,7 +1,6 @@
 package com.example.coffee.repository;
 
 import com.example.coffee.model.order.OrderResponseDTO;
-import com.example.coffee.model.user.CreateMemberDTO;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 

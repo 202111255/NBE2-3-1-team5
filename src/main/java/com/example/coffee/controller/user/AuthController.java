@@ -1,6 +1,6 @@
 package com.example.coffee.controller.user;
 
-import com.example.coffee.model.user.CreateMemberDTO;
+import com.example.coffee.model.user.RequestMemberDTO;
 import com.example.coffee.model.user.LoginRequestDTO;
 import com.example.coffee.model.user.UpdateMemberDTO;
 import com.example.coffee.service.AuthService;
@@ -12,8 +12,6 @@ import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 import com.example.coffee.common.Result;
 
-import java.util.Map;
-
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
@@ -21,7 +19,7 @@ public class AuthController {
     private AuthService authService;
 
     @PostMapping("/signup")
-    public Result signup(@Valid @RequestBody CreateMemberDTO createMemberDTO) {
+    public Result signup(@Valid @RequestBody RequestMemberDTO createMemberDTO) {
         return authService.signup(createMemberDTO);
     }
 
