@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+    <mapper namespace="com.example.coffee.repository.ProductMapper">
+
+        <!-- 모든 상품 조회 -->
+        <select id="findAll" resultType="com.example.coffee.model.product.ProductDTO">
+            SELECT * FROM product ORDER BY createdAt DESC
+        </select>
+
+        <!-- 특정 상품 조회 -->
+        <select id="findById" parameterType="long" resultType="com.example.coffee.model.product.ProductDTO">
+            SELECT * FROM product WHERE productId = #{productId}
+        </select>
+
+        <!-- 상품 생성 -->
+        <insert id="save" parameterType="com.example.coffee.model.product.ProductDTO">
+            INSERT INTO product (name, price, inventory, description, image)
+            VALUES (#{name}, #{price}, #{inventory}, #{description}, #{image})
+        </insert>
+
+        <!-- 상품 수정 -->
+        <update id="update" parameterType="com.example.coffee.model.product.ProductDTO">
+            UPDATE product
+            SET name = #{name},
+                price = #{price},
+                inventory = #{inventory},
+                description = #{description},
+                image = #{image}
+            WHERE productId = #{productId}
+        </update>
+
+        <!-- 상품 삭제 -->
+        <delete id="delete" parameterType="long">
+            DELETE FROM product WHERE productId = #{productId}
+        </delete>
+
+    </mapper>
