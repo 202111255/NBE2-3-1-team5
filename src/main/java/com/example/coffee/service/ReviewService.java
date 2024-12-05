@@ -32,9 +32,11 @@ public class ReviewService {
     }
 
     // 리뷰 수정
-    public Result updateReview(Long userId, ReviewDTO reviewDTO){
+    public Result updateReview(Long userId, Long reviewId ,ReviewDTO reviewDTO){
         try {
             reviewDTO.setMemberId(userId);
+            reviewDTO.setReviewId(reviewId);
+
             int flag = 0;
             flag = reviewMapper.updateReview(reviewDTO);
 
