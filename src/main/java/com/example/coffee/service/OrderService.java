@@ -110,15 +110,19 @@ public class OrderService {
 
 
     //주문 POST
-    public Result createOrder(OrderRequestDTO orderRequestDTO) {
+    public Result createOrder(Long memberId, OrderRequestDTO orderRequestDTO) {
         try {
-            // 1. 입력 값 검증
+            // 0. 입력 값 검증
             if (orderRequestDTO == null || orderRequestDTO.getOrderLists() == null || orderRequestDTO.getOrderLists().isEmpty()) {
                 return new Result(ResultCode.INVALID_PARAMETER, "주문 정보가 유효하지 않습니다.");
             }
 
+            // 1. memberId 가져오기
+            RequestMemberDTO member = memberMapper.userInfo(memberId);
+            Long Id = member.getMemberId();
+
             // 2. Order 등록
-            orderMapper.insertOrder(orderRequestDTO);
+            orderMapper.insertOrder(Id, orderRequestDTO);
 
             // 3. 방금 삽입된 주문의 ID 가져오기
             Long orderId = orderMapper.getLastInsertedOrderId();

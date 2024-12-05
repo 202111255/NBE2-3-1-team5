@@ -31,8 +31,8 @@ public class OrderController {
     }
 
     @PostMapping("/order")
-    public Result createOrder(@RequestBody OrderRequestDTO orderRequestDTO) {
-        return orderService.createOrder(orderRequestDTO);
+    public Result createOrder(@AuthenticationPrincipal Long memberId, @RequestBody OrderRequestDTO orderRequestDTO) {
+        return orderService.createOrder(memberId, orderRequestDTO);
     }
 
     @PutMapping("/order/{orderId}")

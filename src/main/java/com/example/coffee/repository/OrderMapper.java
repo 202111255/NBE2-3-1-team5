@@ -20,7 +20,9 @@ public interface OrderMapper {
     List<OrderByMemberResponseDTO> getOrderByMemberId(Long memberId);
 
     //주문 등록
-    void insertOrder(OrderRequestDTO orderRequestDTO);
+    //void insertOrder(Long memberId, OrderRequestDTO orderRequestDTO);
+    void insertOrder(@Param("memberId") Long memberId, @Param("orderRequestDTO") OrderRequestDTO orderRequestDTO);
+
 
     // 마지막 삽입된 Order ID 조회
     Long getLastInsertedOrderId();

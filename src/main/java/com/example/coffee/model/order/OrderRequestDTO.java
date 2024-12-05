@@ -8,7 +8,7 @@ import java.util.List;
 
 @Getter
 public class OrderRequestDTO {
-    private Long memberId;
+    //private Long memberId;
     private String address;
     private String zipcode;
     private int totalQuantity;
