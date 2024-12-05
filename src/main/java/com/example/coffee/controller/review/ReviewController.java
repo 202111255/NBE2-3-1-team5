@@ -21,9 +21,9 @@ public class ReviewController {
         return reviewService.insertReview(userId, reviewDTO);
     }
 
-    @PutMapping("/update")
-    public Result updateReview(@AuthenticationPrincipal Long userId, @RequestBody ReviewDTO reviewDTO){
-        return reviewService.updateReview(userId, reviewDTO);
+    @PutMapping("/update/{reviewId}")
+    public Result updateReview(@AuthenticationPrincipal Long userId, @PathVariable Long reviewId, @RequestBody ReviewDTO reviewDTO){
+        return reviewService.updateReview(userId, reviewId, reviewDTO);
     }
 
     @DeleteMapping("/delete/{reviewId}")
