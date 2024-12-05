@@ -12,7 +12,7 @@ import java.time.LocalDateTime;
 
 @Alias(value = "member")
 @Getter
-public class CreateMemberDTO {
+public class RequestMemberDTO {
     @Schema(description = "사용자 ID", example = "1")
     private Long memberId; // 데이터베이스의 memberId와 매핑
 
@@ -24,7 +24,6 @@ public class CreateMemberDTO {
     @Email(message = "유효한 이메일 형식이어야 합니다.")
     private String email;
 
-    @JsonIgnore
     @Pattern(
             regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$",
             message = "비밀번호는 최소 하나의 문자, 숫자, 특수 문자를 포함해야 합니다."
@@ -40,11 +39,19 @@ public class CreateMemberDTO {
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
-
+    // refreshToken 컬럼
+    @JsonIgnore
+    private String refreshToken;
 
     public void setPassword(String password) {
         this.password = password;
     }
+
+    // refreshToken 변경
+    public void setRefreshToken(String refreshToken) {
+        this.refreshToken = refreshToken;
+    }
+
     public void setCreatedAt(LocalDateTime createdAt) {
         this.createdAt = createdAt;
     }
