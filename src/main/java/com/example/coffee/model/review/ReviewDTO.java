@@ -3,6 +3,7 @@ package com.example.coffee.model.review;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.apache.ibatis.type.Alias;
 
@@ -11,6 +12,7 @@ import java.time.LocalDateTime;
 
 @Alias(value = "review")
 @AllArgsConstructor
+@NoArgsConstructor
 @Getter
 @Setter
 public class ReviewDTO {
@@ -20,6 +22,8 @@ public class ReviewDTO {
     private String content;
 
     private Long memberId;
+    @Schema(description = "productId", example = "1")
+    private Long productId;
 
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
