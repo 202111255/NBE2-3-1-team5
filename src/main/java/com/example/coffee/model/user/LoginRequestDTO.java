@@ -3,7 +3,7 @@ package com.example.coffee.model.user;
 import lombok.Getter;
 
 @Getter
-public class LoginRequestDTO {
+public class    LoginRequestDTO {
     private String email;
     private String password;
 }

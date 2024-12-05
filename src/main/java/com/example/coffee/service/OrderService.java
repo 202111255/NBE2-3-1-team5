@@ -5,13 +5,11 @@ import com.example.coffee.common.ResultCode;
 import com.example.coffee.model.order.OrderByMemberResponseDTO;
 import com.example.coffee.model.order.OrderRequestDTO;
 import com.example.coffee.model.order.OrderResponseDTO;
-import com.example.coffee.model.user.CreateMemberDTO;
 import com.example.coffee.repository.OrderMapper;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
-
 import java.util.List;
 import java.util.Map;
 

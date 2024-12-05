@@ -2,12 +2,17 @@ package com.example.coffee.model.user;
 
 
 import io.swagger.v3.oas.annotations.media.Schema;
+import lombok.AllArgsConstructor;
 import lombok.Getter;
 import org.apache.ibatis.type.Alias;
 
+import java.time.LocalDateTime;
+
 @Alias(value = "userProfile")
+@AllArgsConstructor
 @Getter
-public class MemberProfileDTO {
+public class ResponseMemberDTO {
+    private Long id;
     @Schema(description = "사용자 이름", example = "username")
     private String name;
 
@@ -19,4 +24,7 @@ public class MemberProfileDTO {
 
     @Schema(description = "우편번호", example = "12345")
     private String zipcode;
+
+    private LocalDateTime createdAt;
+    private LocalDateTime updatedAt;
 }
