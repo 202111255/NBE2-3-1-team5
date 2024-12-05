@@ -84,5 +84,13 @@
     </insert>
 
 
+    <!--  주문 취소  -->
+    <update id="updateOrder">
+        UPDATE `order`
+        SET isCancelled = 1
+        where orderId = #{orderId};
+    </update>
+
+
 
     </mapper>

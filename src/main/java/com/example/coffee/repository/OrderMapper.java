@@ -28,4 +28,7 @@ public interface OrderMapper {
     //주문 리스트 등록
     //void insertOrderItems(List<OrderListRequestDTO> orderListRequestDTO);
     void insertOrderItems(@Param("orderId") Long orderId, @Param("orderLists") List<OrderListRequestDTO> orderLists);
+
+    //주문 변경(=취소)
+    void updateOrder(@Param("orderId") Long orderId);
 }
