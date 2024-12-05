@@ -7,4 +7,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface ReviewMapper {
 
     void insertReview(ReviewDTO reviewDTO);
+
+    int updateReview(ReviewDTO reviewDTO);
+    int deleteReview(ReviewDTO reviewDTO);
 }
