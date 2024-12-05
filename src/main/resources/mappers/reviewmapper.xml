@@ -6,4 +6,15 @@
         values (#{memberId}, #{content}, #{productId}, #{createdAt}, #{updatedAt});
     </insert>
 
+    <update id="updateReview" parameterType="review" >
+        update review
+        set content = #{content}
+        where reviewId = #{reviewId} and memberId = #{memberId}
+    </update>
+
+    <delete id="deleteReview" parameterType="review" >
+        delete from review
+        where reviewId = #{reviewId} and memberId = #{memberId}
+    </delete>
+
 </mapper>
