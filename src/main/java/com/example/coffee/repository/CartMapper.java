@@ -1,19 +1,29 @@
 package com.example.coffee.repository;
 
 
-import com.example.coffee.model.cart.CartListDTO;
-import com.example.coffee.model.cart.CartDTO;
-import com.example.coffee.model.cart.ViewCartListDTO;
+import com.example.coffee.model.cart.*;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 @Mapper
 public interface CartMapper {
-    ArrayList<ViewCartListDTO> viewCartList(CartDTO to);
-    void addProductToCart(CartListDTO to);
+    ArrayList<CartViewRequestDTO> viewCartList(Long cartId);
 
-    void deleteCartList(CartListDTO to);
+    void cartProductAdd(Map<String, Object> params);
 
-    void updateCartList(CartListDTO to);
+    void deleteCartList(CartDeleteRequestDTO request);
+
+    void updateCartList(CartUpdateRequestDTO request);
+
+    String selectCartId(Long cartId);
+
+    String getProductById(Long productId);
+
+    int getProductInventoryById(Long productId);
+
+    int getPriceById(Long productId);
+
+    int countProductByCartIdAndProductId(CartAddRequestDTO request);
 }

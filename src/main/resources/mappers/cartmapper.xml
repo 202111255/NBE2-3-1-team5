@@ -2,21 +2,44 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.coffee.repository.CartMapper">
 
-    <select id="viewCartList" parameterType="CartDTO" resultType="ViewCartListDTO">
-        select productId, quantity,cartitemid, price
+    <select id="viewCartList" resultType="ViewCartListDTO">
+        select productId, quantity, cartitemid, price
         from Cart_List
         where cartid = #{cartId}
     </select>
 
-    <insert id="addProductToCart" parameterType="CartListDTO">
-        insert into cart_list (cartid,productid,quantity,price) values (#{cartId},#{productId},#{quantity})
+    <insert id="cartProductAdd" >
+        insert into cart_list (cartid,productid,quantity,price) values (#{cartId},#{productId},#{quantity},#{price})
     </insert>
 
-    <delete id="deleteCartList" parameterType="CartListDTO">
-        delete from cart_list where cartItemId= #{cartItemId}
+    <delete id="deleteCartList" parameterType="CartDeleteRequestDTO">
+        delete from cart_list where cartId= #{cartId} and productId = #{productId}
     </delete>
 
-    <update id="updateCartList" parameterType="CartListDTO">
-        update cart_list set quantity = #{quantity} where cartitemid = #{cartItemId}
+    <update id="updateCartList" parameterType="CartUpdateRequestDTO">
+        update cart_list set quantity = #{quantity} where cartId = #{cartId} and productId = #{productId}
     </update>
+
+    <select id="selectCartId" resultType="String">
+        select cartId from cart where cartId = #{cartid}
+    </select>
+
+    <select id="getProductById" resultType="String">
+        select productId from product where productId = #{productId}
+    </select>
+
+    <select id="getProductInventoryById" resultType="int">
+        select inventory from product where productId = #{productId}
+    </select>
+
+    <select id="getPriceById" resultType="int">
+        select price from product where productId = #{productId}
+    </select>
+
+    <select id="countProductByCartIdAndProductId" parameterType="CartAddRequestDTO" resultType="int">
+        select count(*)
+        from cart_list
+        where cartId = #{cartId} and productId = #{productId}
+    </select>
+
 </mapper>

@@ -6,10 +6,9 @@ import org.apache.ibatis.type.Alias;
 
 @Getter
 @Setter
-@Alias( value = "ViewCartListDTO")
-public class ViewCartListDTO {
-    private Long cartItemId;
+@Alias(value = "CartUpdateRequestDTO")
+public class CartUpdateRequestDTO {
+    private Long cartId;
     private Long productId;
-    private int quantity;
-    private int price;
+    private Long quantity;
 }

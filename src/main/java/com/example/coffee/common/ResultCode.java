@@ -37,6 +37,7 @@ public enum ResultCode {
     DUPLICATE_ADDRESS(409, "이미 등록된 주소입니다."),
 
     // 장바구니 관련
+    USER_NOT_FOUND(404, "요청하신 ID가 존재하지 않습니다."),
     CART_NOT_FOUND(404, "장바구니가 비어 있습니다."),
     FAIL_TO_ADD_TO_CART(500, "장바구니에 상품 추가를 실패했습니다."),
     ITEM_ALREADY_IN_CART(409, "장바구니에 이미 추가된 상품입니다."),
