@@ -5,6 +5,8 @@ import com.example.coffee.common.ResultCode;
 import com.example.coffee.model.order.OrderByMemberResponseDTO;
 import com.example.coffee.model.order.OrderRequestDTO;
 import com.example.coffee.model.order.OrderResponseDTO;
+import com.example.coffee.model.user.RequestMemberDTO;
+import com.example.coffee.repository.MemberMapper;
 import com.example.coffee.repository.OrderMapper;
 import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import lombok.AllArgsConstructor;
@@ -21,6 +23,7 @@ import java.util.Map;
 @Service
 public class OrderService {
     private final OrderMapper orderMapper;
+    private final MemberMapper memberMapper;
 
     public Result getOrderById(Long orderId) {
         try {
@@ -50,15 +53,42 @@ public class OrderService {
         }
     }
 
+//    public Result getOrderByMemberId(Long memberId) {
+//        try {
+//            // 1. memberId 검증
+//            if (memberId == null || memberId <= 0) {
+//                return new Result(ResultCode.INVALID_PARAMETER);
+//            }
+//
+//            // 2. 주문 조회
+//            List<OrderByMemberResponseDTO> order = orderMapper.getOrderByMemberId(memberId);
+//
+//            // 3. 조회 결과 검증
+//            if (order == null) {
+//                return new Result(ResultCode.ORDER_NOT_FOUND);
+//            }
+//
+//            // 4. 정상 결과 반환
+//            return new Result(ResultCode.SUCCESS, order);
+//
+//        } catch (DataAccessException dae) {
+//            // 5. 데이터베이스 관련 예외 처리
+//            return new Result(ResultCode.DB_ERROR);
+//
+//        } catch (Exception e) {
+//            // 6. 일반적인 시스템 예외 처리
+//            return new Result(ResultCode.SYSTEM_ERROR);
+//        }
+//    }
+
     public Result getOrderByMemberId(Long memberId) {
         try {
-            // 1. memberId 검증
-            if (memberId == null || memberId <= 0) {
-                return new Result(ResultCode.INVALID_PARAMETER);
-            }
+            // 1. memberId 가져오기
+            RequestMemberDTO member = memberMapper.userInfo(memberId);
+            Long Id = member.getMemberId();
 
             // 2. 주문 조회
-            List<OrderByMemberResponseDTO> order = orderMapper.getOrderByMemberId(memberId);
+            List<OrderByMemberResponseDTO> order = orderMapper.getOrderByMemberId(Id);
 
             // 3. 조회 결과 검증
             if (order == null) {

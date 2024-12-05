@@ -17,7 +17,7 @@ public interface OrderMapper {
     OrderResponseDTO getOrderById(@Param("orderId") Long orderId);
 
     //해당 유저의 모든 주문조회
-    List<OrderByMemberResponseDTO> getOrderByMemberId(@Param("memberId") Long memberId);
+    List<OrderByMemberResponseDTO> getOrderByMemberId(Long memberId);
 
     //주문 등록
     void insertOrder(OrderRequestDTO orderRequestDTO);

@@ -5,6 +5,7 @@ import com.example.coffee.common.Result;
 import com.example.coffee.model.order.OrderRequestDTO;
 import com.example.coffee.service.OrderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -19,8 +20,13 @@ public class OrderController {
         return orderService.getOrderById(orderId);
     }
 
-    @GetMapping("/order/member/{memberId}")
-    public Result getOrderByMemberId(@PathVariable Long memberId) {
+//    @GetMapping("/order/member/{memberId}")
+//    public Result getOrderByMemberId(@PathVariable Long memberId) {
+//        return orderService.getOrderByMemberId(memberId);
+//    }
+
+    @GetMapping("/order/member")
+    public Result getOrderByMemberId(@AuthenticationPrincipal Long memberId) {
         return orderService.getOrderByMemberId(memberId);
     }
 
