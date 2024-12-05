@@ -44,6 +44,45 @@
             WHERE o.orderId = #{orderId};
         </select>
 
+    <!-- 한 명에 대한 전체 주문조회 -->
+    <select id="getOrderByMemberId" resultType="OrderByMember">
+        SELECT
+            orderId,
+            memberId,
+            address,
+            zipcode,
+            totalQuantity,
+            totalPrice,
+            isCancelled,
+            createdAt,
+            updatedAt
+        FROM
+            `order`
+        WHERE memberId = #{memberId};
+    </select>
+
+
+
+    <!-- 주문 등록 -->
+    <insert id="insertOrder" parameterType="com.example.coffee.model.order.OrderRequestDTO">
+        INSERT INTO `order` (memberId, address, zipcode, totalQuantity, totalPrice, createdAt, updatedAt)
+        VALUES (#{memberId}, #{address}, #{zipcode}, #{totalQuantity}, #{totalPrice}, NOW(), NOW());
+    </insert>
+
+    <!-- 마지막 삽입된 orderId 조회 -->
+    <select id="getLastInsertedOrderId" resultType="long">
+        SELECT LAST_INSERT_ID();
+    </select>
+
+    <!-- 주문 아이템 등록 -->
+    <insert id="insertOrderItems" parameterType="com.example.coffee.model.order.OrderListRequestDTO">
+        INSERT INTO order_list (orderId, productId, quantity, price)
+        VALUES
+        <foreach collection="orderLists" item="item" separator=",">
+            (#{orderId}, #{item.productId}, #{item.quantity}, #{item.price})
+        </foreach>
+    </insert>
+
 
 
     </mapper>
