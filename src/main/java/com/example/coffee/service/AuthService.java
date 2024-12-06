@@ -64,6 +64,8 @@ public class AuthService {
 
             // Cookie에 refreshToken 값 추가
             Cookie cookie = new Cookie(cookieName, refreshToken);
+            cookie.setDomain("localhost");
+            cookie.setPath("/");
             cookie.setMaxAge(604800);
             response.addCookie(cookie);
 
@@ -100,6 +102,8 @@ public class AuthService {
 
             // Cookie에 기존 refreshToken 만료 시간(0) 변경
             Cookie cookie = new Cookie(cookieName, null);
+            cookie.setDomain("localhost");
+            cookie.setPath("/");
             cookie.setMaxAge(0);
             response.addCookie(cookie);
 
