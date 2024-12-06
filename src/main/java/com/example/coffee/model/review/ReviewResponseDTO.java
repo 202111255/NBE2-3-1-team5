@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ReviewDTO {
+public class ReviewResponseDTO {
     private Long reviewId;
 
     @Schema(description = "리뷰 내용", example = "이 커피 정말 맛있네요!")

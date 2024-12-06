@@ -1,13 +1,13 @@
 package com.example.coffee.repository;
 
-import com.example.coffee.model.review.ReviewDTO;
+import com.example.coffee.model.review.ReviewResponseDTO;
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface ReviewMapper {
 
-    void insertReview(ReviewDTO reviewDTO);
+    void insertReview(ReviewResponseDTO reviewResponseDTO);
 
-    int updateReview(ReviewDTO reviewDTO);
-    int deleteReview(ReviewDTO reviewDTO);
+    int updateReview(ReviewResponseDTO reviewResponseDTO);
+    int deleteReview(ReviewResponseDTO reviewResponseDTO);
 }
