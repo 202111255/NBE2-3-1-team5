@@ -2,8 +2,8 @@ package com.example.coffee.controller.review;
 
 
 import com.example.coffee.common.Result;
-import com.example.coffee.model.review.ReviewResponseDTO;
 
+import com.example.coffee.model.review.ReviewRequestDTO;
 import com.example.coffee.service.ReviewService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
