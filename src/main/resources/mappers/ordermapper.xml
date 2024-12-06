@@ -64,10 +64,17 @@
 
 
     <!-- 주문 등록 -->
-    <insert id="insertOrder" parameterType="com.example.coffee.model.order.OrderRequestDTO">
+<!--    <insert id="insertOrder" parameterType="com.example.coffee.model.order.OrderRequestDTO">-->
+<!--        INSERT INTO `order` (memberId, address, zipcode, totalQuantity, totalPrice, createdAt, updatedAt)-->
+<!--        VALUES (#{memberId}, #{address}, #{zipcode}, #{totalQuantity}, #{totalPrice}, NOW(), NOW());-->
+<!--    </insert>-->
+
+    <insert id="insertOrder" parameterType="map">
         INSERT INTO `order` (memberId, address, zipcode, totalQuantity, totalPrice, createdAt, updatedAt)
-        VALUES (#{memberId}, #{address}, #{zipcode}, #{totalQuantity}, #{totalPrice}, NOW(), NOW());
+        VALUES (#{memberId}, #{orderRequestDTO.address}, #{orderRequestDTO.zipcode},
+                #{orderRequestDTO.totalQuantity}, #{orderRequestDTO.totalPrice}, NOW(), NOW());
     </insert>
+
 
     <!-- 마지막 삽입된 orderId 조회 -->
     <select id="getLastInsertedOrderId" resultType="long">
@@ -82,5 +89,13 @@
             (#{orderId}, #{item.productId}, #{item.quantity}, #{item.price})
         </foreach>
     </insert>
+
+
+    <!--  주문 취소  -->
+    <update id="updateOrder">
+        UPDATE `order`
+        SET isCancelled = 1
+        where orderId = #{orderId};
+    </update>
 
     </mapper>

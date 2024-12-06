@@ -22,4 +22,5 @@ public class OrderResponseDTO {
     private boolean isCancelled;
     private LocalDateTime createdAt;
     private LocalDateTime updatedAt;
+
 }

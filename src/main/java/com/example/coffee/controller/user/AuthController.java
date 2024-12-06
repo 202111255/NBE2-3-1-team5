@@ -38,16 +38,17 @@ public class AuthController {
         return authService.getUserProfile(userId);
     }
 
-    @PutMapping("/update")
+    @PutMapping
     public Result updateUser(@AuthenticationPrincipal Long userId, @RequestBody UpdateMemberDTO updateMemberDTO){
         return authService.updateUser(userId, updateMemberDTO);
     }
 
-    @DeleteMapping("/delete")
+    @DeleteMapping
     public Result deleteUser(@AuthenticationPrincipal Long userId) {
         return authService.deleteUser(userId);
     }
-    @PostMapping("/recreatetoken")
+
+    @PostMapping("/new-token")
     public Result reCreateToken(HttpServletRequest request) {
         return authService.reCreateToken(request);
     }
