@@ -1,45 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.example.coffee.repository.CartMapper">
-
-    <select id="viewCartList" resultType="CartViewRequestDTO">
-        select productId, quantity, cartitemid, price
-        from Cart_List
-        where cartid = #{cartId}
+    <select id="getCartIdByMemberId" resultType="Long">
+        select cartId
+        from
+        where memberId = #{userId}
+    </select>
+    <select id="viewCartList" resultType="ViewCartListDTO">
+        select cartId, cartitemid, productId, quantity, price
+        from cart_list
+        where cartId = #{cartId}
     </select>
 
-    <insert id="cartProductAdd" >
-        insert into cart_list (cartid,productid,quantity,price) values (#{cartId},#{productId},#{quantity},#{price})
+    <select id="getViewDetails" resultType="ViewDetailsDTO">
+        select totalQuantity, totalPrice
+        from cart
+        where cartId = #{cartId}
+    </select>
+
+    <insert id="cartProductAdd">
+        insert into
+            cart_list (cartid,productid,quantity,price)
+        values (#{cartId},#{productId},#{quantity},#{price})
     </insert>
 
     <delete id="deleteCartList" parameterType="CartDeleteRequestDTO">
-        delete from cart_list where cartId= #{cartId} and productId = #{productId}
+        delete
+        from cart_list
+        where cartId= #{cartId}
+         and productId = #{productId}
     </delete>
 
-    <update id="updateCartList" parameterType="CartUpdateRequestDTO">
-        update cart_list set quantity = #{quantity} where cartId = #{cartId} and productId = #{productId}
+    <update id="updateCartList" parameterType="UpdateProductDetailsDTO">
+        update cart_list
+        set quantity = #{quantity}, price = #{price}
+        where cartId = #{cartId}
+         and productId = #{productId}
     </update>
 
     <select id="selectCartId" resultType="String">
-        select cartId from cart where cartId = #{cartid}
+        select cartId
+        from cart
+        where cartId = #{cartid}
     </select>
 
     <select id="getProductById" resultType="String">
-        select productId from product where productId = #{productId}
-    </select>
-
-    <select id="getProductInventoryById" resultType="int">
-        select inventory from product where productId = #{productId}
+        select productId
+        from product
+        where productId = #{productId}
     </select>
 
     <select id="getPriceById" resultType="int">
-        select price from product where productId = #{productId}
+        select price
+        from product
+        where productId = #{productId}
     </select>
 
-    <select id="countProductByCartIdAndProductId" parameterType="CartAddRequestDTO" resultType="int">
+    <select id="countProductByCartIdAndProductId" parameterType="CartAddProductDTO" resultType="int">
         select count(*)
         from cart_list
-        where cartId = #{cartId} and productId = #{productId}
+        where cartId = #{cartId}
+         and productId = #{productId}
     </select>
+
+    <select id="findProductInCart" parameterType="FindProductInCartDTO" resultType="String">
+        select productId
+        from cart_list
+        where cartId = #{cartId}
+          and productId = #{productId}
+    </select>
+
+    <update id="updateTotals">
+        update cart
+        set
+            totalPrice = (
+                select sum(price)
+                from cart_list
+                where cartId = #{cartId}
+            ),
+            totalquantity = (
+                select sum(quantity)
+                from cart_list
+                where cartId = #{cartId}
+            )
+        where cartId = #{cartId};
+    </update>
 
 </mapper>
