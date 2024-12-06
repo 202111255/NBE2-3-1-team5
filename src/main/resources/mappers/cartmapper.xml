@@ -4,12 +4,12 @@
     <select id="getCartIdByMemberId" resultType="Long">
         select cartId
         from cart
-        where memberId = #{cartId}
+        where memberId = #{userId}
     </select>
     <select id="viewCartList" resultType="ViewCartListDTO">
         select cartId, cartitemid, productId, quantity, price
         from cart_list
-        where memberId = #{memberId}
+        where carId = #{memberId}
     </select>
 
     <select id="getViewDetails" resultType="ViewDetailsDTO">
