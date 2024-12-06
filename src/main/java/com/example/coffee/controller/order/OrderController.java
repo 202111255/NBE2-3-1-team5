@@ -15,27 +15,23 @@ public class OrderController {
     private OrderService orderService;
 
 
-    @GetMapping("/order/{orderId}")
+    @GetMapping("/orders/{orderId}")
     public Result getOrderById(@PathVariable Long orderId) {
         return orderService.getOrderById(orderId);
     }
 
-//    @GetMapping("/order/member/{memberId}")
-//    public Result getOrderByMemberId(@PathVariable Long memberId) {
-//        return orderService.getOrderByMemberId(memberId);
-//    }
-
-    @GetMapping("/order/member")
+    @GetMapping("/orders/members")
     public Result getOrderByMemberId(@AuthenticationPrincipal Long memberId) {
         return orderService.getOrderByMemberId(memberId);
     }
 
-    @PostMapping("/order")
+
+    @PostMapping("/orders")
     public Result createOrder(@AuthenticationPrincipal Long memberId, @RequestBody OrderRequestDTO orderRequestDTO) {
         return orderService.createOrder(memberId, orderRequestDTO);
     }
 
-    @PutMapping("/order/{orderId}")
+    @PutMapping("/orders/{orderId}")
     public Result updateOrder(@PathVariable Long orderId) {
         return orderService.updateOrder(orderId);
     }
