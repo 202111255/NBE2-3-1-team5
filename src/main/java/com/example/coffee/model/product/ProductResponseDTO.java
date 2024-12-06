@@ -1,9 +1,12 @@
 package com.example.coffee.model.product;
 
+import com.example.coffee.model.review.ReviewResponseDTO;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
+import java.util.List;
 
 
 @Getter
@@ -19,6 +22,8 @@ public class ProductResponseDTO {
     private String image;         // 상품 이미지 URL
     private String createdAt; // 등록일
     private String updatedAt; // 수정일
+
+    private List<ReviewResponseDTO> reviews;
 }
 
 // 조회 응답 DTO

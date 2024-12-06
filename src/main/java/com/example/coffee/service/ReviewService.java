@@ -14,7 +14,6 @@ public class ReviewService {
 
     private final ReviewMapper reviewMapper;
 
-
     public Result insertReview(Long userId, ReviewRequestDTO reviewRequestDTO) {
         try {
             ReviewResponseDTO reviewResponseDTO = new ReviewResponseDTO();

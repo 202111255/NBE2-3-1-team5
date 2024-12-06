@@ -13,6 +13,11 @@
             SELECT * FROM product WHERE productId = #{productId}
         </select>
 
+        <!-- 리뷰 조회 -->
+        <select id="findReviewsByProductId" parameterType="long" resultType="com.example.coffee.model.review.ReviewResponseDTO">
+            SELECT * FROM review WHERE productId = #{productId}
+        </select>
+
         <!-- 상품 생성 -->
         <insert id="insert" parameterType="com.example.coffee.model.product.ProductDTO">
             INSERT INTO product (name, price, inventory, description, image)

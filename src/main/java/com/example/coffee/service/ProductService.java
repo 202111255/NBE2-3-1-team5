@@ -5,6 +5,7 @@ import com.example.coffee.common.ResultCode;
 import com.example.coffee.model.product.ProductDTO;
 import com.example.coffee.model.product.ProductRequestDTO;
 import com.example.coffee.model.product.ProductResponseDTO;
+import com.example.coffee.model.review.ReviewResponseDTO;
 import com.example.coffee.repository.ProductMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataAccessException;
@@ -44,7 +45,11 @@ public class ProductService {
             if (product == null) {
                 return new Result<>(ResultCode.PRODUCT_NOT_FOUND);
             }
-            return new Result<>(ResultCode.SUCCESS, convertToResponseDTO(product));
+            List<ReviewResponseDTO> reviews = productMapper.findReviewsByProductId(productId); // 리뷰 조회
+            ProductResponseDTO response = convertToResponseDTO(product);
+            response.setReviews(reviews); // 리뷰 데이터를 설정
+
+            return new Result<>(ResultCode.SUCCESS, response);
         } catch (DataAccessException e) {
             return new Result<>(ResultCode.DB_ERROR);
         }
@@ -125,7 +130,8 @@ public class ProductService {
                 product.getDescription(),
                 product.getImage(),
                 product.getCreatedAt().toString(),
-                product.getUpdatedAt().toString()
+                product.getUpdatedAt().toString(),
+                null
         );
     }
 }
