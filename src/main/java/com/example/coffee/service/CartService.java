@@ -22,15 +22,12 @@ public class CartService {
     private final MemberMapper memberMapper;
 
     // 장바구니 상품 목록 조회
-    public Result viewCartList(Long memberId) {
+    public Result viewCartList(Long userId) {
         try {
-            System.out.println("시작");
             // cartId 가져오기
-            RequestMemberDTO member = memberMapper.userInfo(memberId);
+            RequestMemberDTO member = memberMapper.userInfo(userId);
             Long Id = member.getMemberId();
             Long cartId = cartMapper.getCartIdByMemberId(Id);
-
-
             // 오류 확인 ==================================================================================
 
             // 1. 장바구니 ID 확인
@@ -69,11 +66,36 @@ public class CartService {
         }
     }
 
+    public Result createCart(Long userId) {
+        try {
+            // 정상 처리 ==================================================================================
+
+            // cartId 가져오기
+            RequestMemberDTO member = memberMapper.userInfo(userId);
+            Long Id = member.getMemberId();
+            Long cartId = cartMapper.getCartIdByMemberId(Id);
+
+            // 1. 데이터베이스 작성
+            cartMapper.createCart(userId);
+
+            return new Result(ResultCode.SUCCESS);
+
+        } catch (DataAccessException dae) {
+            // 데이터베이스 관련 예외 처리
+            System.out.println(dae.getMessage());
+            return new Result(ResultCode.DB_ERROR);
+        } catch (Exception e) {
+            // 시스템 예외 처리
+            System.out.println(e.getMessage());
+            return new Result(ResultCode.SYSTEM_ERROR);
+        }
+    }
+
     // 장바구니 상품 추가
-    public Result cartProductAdd(Long memberId, CartAddRequestDTO request) {
+    public Result cartProductAdd(Long userId, CartAddRequestDTO request) {
         try {
             // cartId 가져오기
-            RequestMemberDTO member = memberMapper.userInfo(memberId);
+            RequestMemberDTO member = memberMapper.userInfo(userId);
             Long Id = member.getMemberId();
             Long cartId = cartMapper.getCartIdByMemberId(Id);
 
@@ -82,25 +104,19 @@ public class CartService {
             // 1. 요청 검증
             // 잘못된 요청: 수량이 0 이하인 경우
             if (request.getQuantity() <= 0) {
-                System.out.println("잘못된 요청");
                 return new Result(ResultCode.INVALID_PARAMETER);
             }
 
-            // 2. 장바구니 ID 확인
-            // 해당 cartId가 존재하지 않는 경우
-            if (cartMapper.selectCartId(cartId) == null) {
-                return new Result(ResultCode.USER_NOT_FOUND);
-            }
-
-            // 3. 상품 ID 확인
+            // 2. 상품 ID 확인
             // 해당 productId가 존재하지 않는 경우
             if (cartMapper.getProductById(request.getProductId()) == null) {
                 return new Result(ResultCode.PRODUCT_NOT_FOUND);
             }
 
-            // 4. 중복 상품 확인
+            // 3. 중복 상품 확인
             // 장바구니에 이미 추가된 상품인지 확인
-            int count = cartMapper.countProductByCartIdAndProductId(request);
+            Long productId = request.getProductId();
+            int count = cartMapper.countProductByCartIdAndProductId(cartId, productId);
             if (count > 0) {
                 return new Result(ResultCode.ITEM_ALREADY_IN_CART);
             }
@@ -126,18 +142,20 @@ public class CartService {
 
         } catch (DataAccessException dae) {
             // 데이터베이스 관련 예외 처리
+            System.out.println(dae.getMessage());
             return new Result(ResultCode.DB_ERROR);
         } catch (Exception e) {
             // 시스템 예외 처리
+            System.out.println(e.getMessage());
             return new Result(ResultCode.SYSTEM_ERROR);
         }
     }
 
     // 장바구니 상품 개수 변경
-    public Result updateCartList(Long memberId, CartUpdateRequestDTO request) {
+    public Result updateCartList(Long userId, CartUpdateRequestDTO request) {
         try {
             // cartId 가져오기
-            RequestMemberDTO member = memberMapper.userInfo(memberId);
+            RequestMemberDTO member = memberMapper.userInfo(userId);
             Long Id = member.getMemberId();
             Long cartId = cartMapper.getCartIdByMemberId(Id);
             // 오류 확인 ==================================================================================
@@ -147,8 +165,6 @@ public class CartService {
                 return new Result(ResultCode.INVALID_PARAMETER);
             }
 
-            /*
-            // 1. 장바구니 내 상품 확인
             // 해당 cartId에 productId가 포함되어 있지 않은 경우
             FindProductInCartDTO findDTO = new FindProductInCartDTO();
             findDTO.setCartId(cartId);
@@ -156,7 +172,7 @@ public class CartService {
             if (cartMapper.findProductInCart(findDTO) == null) {
                 return new Result(ResultCode.PRODUCT_NOT_FOUND);
             }
-             */
+
             // 정상 처리 ==================================================================================
 
             // 1. 상품 수량을 0으로 업데이트하려는 경우, 해당 상품을 삭제 처리
@@ -186,30 +202,26 @@ public class CartService {
 
         } catch (DataAccessException dae) {
             // 데이터베이스 관련 예외 처리
+            System.out.println(dae.getMessage());
             return new Result(ResultCode.DB_ERROR);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             // 일반적인 시스템 예외 처리
+            System.out.println(e.getMessage());
             return new Result(ResultCode.SYSTEM_ERROR);
         }
     }
 
     // 장바구니 상품 삭제
-    public Result deleteCartList(Long memberId, Long productId) {
+    public Result deleteCartList(Long userId, Long productId) {
         try {
             // cartId 가져오기
-            RequestMemberDTO member = memberMapper.userInfo(memberId);
+            RequestMemberDTO member = memberMapper.userInfo(userId);
             Long Id = member.getMemberId();
             Long cartId = cartMapper.getCartIdByMemberId(Id);
-
             // 오류 확인 ==================================================================================
 
-            // 1. 장바구니 ID 확인
-            // 해당 cartId가 존재하지 않는 경우
-            if (cartMapper.selectCartId(cartId) == null) {
-                return new Result(ResultCode.USER_NOT_FOUND);
-            }
-
-            // 2. 장바구니 내 상품 확인
+            // 1. 장바구니 내 상품 확인
             // 해당 cartId에 productId가 포함되어 있지 않은 경우
             FindProductInCartDTO findDTO = new FindProductInCartDTO();
             findDTO.setCartId(cartId);
@@ -224,7 +236,6 @@ public class CartService {
             Map<String, Object> params = new HashMap<>();
             params.put("cartId", cartId);       // 장바구니 ID
             params.put("productId", productId); // 상품 ID
-
             cartMapper.deleteCartList(params); // 상품 삭제
 
             // 2. 장바구니 총 개수 및 총 가격 업데이트
@@ -235,19 +246,13 @@ public class CartService {
 
         } catch (DataAccessException dae) {
             // 데이터베이스 관련 예외 처리
+            System.out.println(dae.getMessage());
             return new Result(ResultCode.DB_ERROR);
         } catch (Exception e) {
             // 일반적인 시스템 예외 처리
+            System.out.println(e.getMessage());
             return new Result(ResultCode.SYSTEM_ERROR);
         }
     }
-
-
-    /*
-    public boolean convertLongToBoolean(Long userId) {
-        return (userId != null && userId > 0);
-    }
-
-     */
-    }
+}
 

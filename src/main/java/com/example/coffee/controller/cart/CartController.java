@@ -21,15 +21,21 @@ public class CartController {
         return cartService.viewCartList(userId);
     }
 
+    @PostMapping("/cart/products")
+    public Result addProductToCart(@AuthenticationPrincipal Long userId, @RequestBody CartAddRequestDTO request) {
+        return cartService.cartProductAdd(userId, request);
+    }
+
     @PostMapping("/cart")
-    public Result addProductToCart(@AuthenticationPrincipal Long memberId, CartAddRequestDTO request) {
-        return cartService.cartProductAdd(memberId, request);
+    public Result createCart(@AuthenticationPrincipal Long userId) {
+        return cartService.createCart(userId);
     }
 
     @PutMapping("/cart")
-    public Result updateCartList(@AuthenticationPrincipal Long memberId, @RequestBody CartUpdateRequestDTO request) {
-        return cartService.updateCartList(memberId, request);
+    public Result updateCartList(@AuthenticationPrincipal Long userId, @RequestBody CartUpdateRequestDTO request) {
+        return cartService.updateCartList(userId, request);
     }
+
 
     @DeleteMapping("/cart")
     public Result deleteCartList(@AuthenticationPrincipal Long userId, @RequestParam Long productId) {
