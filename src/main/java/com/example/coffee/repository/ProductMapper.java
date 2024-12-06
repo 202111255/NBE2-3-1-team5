@@ -10,7 +10,7 @@ import java.util.List;
 public interface ProductMapper {
     List<ProductDTO> findAll();
     ProductDTO findById(@Param("productId") Long productId);
-    void save(ProductDTO product);
-    void update(ProductDTO product);
-    void delete(@Param("productId") Long productId);
+    void insert(ProductDTO product);
+    int update(ProductDTO product);
+    int delete(@Param("productId") Long productId);
 }

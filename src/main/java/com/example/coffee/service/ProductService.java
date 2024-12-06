@@ -54,7 +54,7 @@ public class ProductService {
     public Result<Void> createProduct(ProductRequestDTO productRequest) {
         try {
             ProductDTO product = convertToDTO(productRequest);
-            productMapper.save(product);
+            productMapper.insert(product);
             return new Result<>(ResultCode.SUCCESS);
         } catch (DataAccessException e) {
             return new Result<>(ResultCode.FAIL_TO_SAVE_PRODUCT);
@@ -71,7 +71,10 @@ public class ProductService {
         try {
             ProductDTO product = convertToDTO(productRequest);
             product.setProductId(productId);
-            productMapper.update(product);
+            int sqlNum = productMapper.update(product);
+            if (sqlNum == 0) {
+                return new Result<>(ResultCode.PRODUCT_NOT_FOUND);
+            }
             return new Result<>(ResultCode.SUCCESS);
         } catch (DataAccessException e) {
             return new Result<>(ResultCode.FAIL_TO_UPDATE_PRODUCT);
@@ -86,7 +89,10 @@ public class ProductService {
             return new Result<>(ResultCode.INVALID_PARAMETER);
         }
         try {
-            productMapper.delete(productId);
+            int sqlNum = productMapper.delete(productId);
+            if (sqlNum == 0) {
+                return new Result<>(ResultCode.PRODUCT_NOT_FOUND);
+            }
             return new Result<>(ResultCode.SUCCESS);
         } catch (DataAccessException e) {
             return new Result<>(ResultCode.FAIL_TO_DELETE_PRODUCT);
