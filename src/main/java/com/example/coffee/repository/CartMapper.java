@@ -10,13 +10,13 @@ import java.util.Map;
 public interface CartMapper {
     Long getCartIdByMemberId(Long userId);
 
-    List<ViewCartListDTO> viewCartList(Long cartId);
+    List<ViewCartListDTO> viewCartList(Long memberId);
 
     ViewDetailsDTO getViewDetails(Long cartId);
 
     void cartProductAdd(Map<String, Object> params);
 
-    void deleteCartList(CartDeleteRequestDTO request);
+    void deleteCartList(Map<String, Object> params);
 
     void updateCartList(UpdateProductDetailsDTO updateDTO);
 
