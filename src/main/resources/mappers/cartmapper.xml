@@ -9,7 +9,7 @@
     <select id="viewCartList" resultType="ViewCartListDTO">
         select cartId, cartitemid, productId, quantity, price
         from cart_list
-        where carId = #{memberId}
+        where cartId = #{memberId}
     </select>
 
     <select id="getViewDetails" resultType="ViewDetailsDTO">
@@ -24,7 +24,7 @@
         values (#{cartId},#{productId},#{quantity},#{price})
     </insert>
 
-    <delete id="deleteCartList">
+    <delete id="deleteCartList" parameterType="CartDeleteRequestDTO">
         delete
         from cart_list
         where cartId= #{cartId}

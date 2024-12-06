@@ -17,8 +17,8 @@ public class CartController {
     private CartService cartService;
 
     @GetMapping("/cart")
-    public Result viewCartList(@AuthenticationPrincipal Long memberId) {
-        return cartService.viewCartList(memberId);
+    public Result viewCartList(@AuthenticationPrincipal Long userId) {
+        return cartService.viewCartList(userId);
     }
 
     @PostMapping("/cart")
@@ -26,10 +26,6 @@ public class CartController {
         return cartService.cartProductAdd(memberId, request);
     }
 
-    @PostMapping("/cart/")
-    public Result createCart(@AuthenticationPrincipal Long memberId) {
-        return cartService.cartProductAdd(memberId);
-    }
     @PutMapping("/cart")
     public Result updateCartList(@AuthenticationPrincipal Long memberId, @RequestBody CartUpdateRequestDTO request) {
         return cartService.updateCartList(memberId, request);

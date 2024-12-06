@@ -242,13 +242,7 @@ public class CartService {
         }
     }
 
-    public Result createCart memberId, Long productId) {
-        try {
 
-
-        } catch (Exception e) {
-
-        }
     /*
     public boolean convertLongToBoolean(Long userId) {
         return (userId != null && userId > 0);
@@ -256,4 +250,4 @@ public class CartService {
 
      */
     }
-}
+
