@@ -53,7 +53,7 @@ public enum ResultCode {
     //  주문 관련
     ORDER_NOT_FOUND(404, "해당 주문을 찾을 수 없습니다."),
     FAIL_TO_PLACE_ORDER(500, "주문 생성에 실패했습니다."),
-    FAIL_TO_CANCEL_ORDER(500, "주문 취소에 실패했습니다."),
+    FAIL_TO_CANCEL_ORDER(400, "준비 혹은 배송 완료로 주문 취소가 불가능합니다."),
     ORDER_ALREADY_CANCELLED(400, "이미 취소된 주문입니다."),
     PAYMENT_FAILED(400, "결제에 실패했습니다."),
     ORDER_NOT_ELIGIBLE_FOR_CANCEL(403, "이 주문은 취소할 수 없습니다."),

@@ -17,10 +17,12 @@ public interface OrderMapper {
     OrderResponseDTO getOrderById(@Param("orderId") Long orderId);
 
     //해당 유저의 모든 주문조회
-    List<OrderByMemberResponseDTO> getOrderByMemberId(@Param("memberId") Long memberId);
+    List<OrderByMemberResponseDTO> getOrderByMemberId(Long memberId);
 
     //주문 등록
-    void insertOrder(OrderRequestDTO orderRequestDTO);
+    //void insertOrder(Long memberId, OrderRequestDTO orderRequestDTO);
+    void insertOrder(@Param("memberId") Long memberId, @Param("orderRequestDTO") OrderRequestDTO orderRequestDTO);
+
 
     // 마지막 삽입된 Order ID 조회
     Long getLastInsertedOrderId();
@@ -28,4 +30,7 @@ public interface OrderMapper {
     //주문 리스트 등록
     //void insertOrderItems(List<OrderListRequestDTO> orderListRequestDTO);
     void insertOrderItems(@Param("orderId") Long orderId, @Param("orderLists") List<OrderListRequestDTO> orderLists);
+
+    //주문 변경(=취소)
+    void updateOrder(@Param("orderId") Long orderId);
 }
