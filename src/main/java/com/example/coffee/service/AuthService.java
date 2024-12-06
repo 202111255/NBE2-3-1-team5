@@ -40,7 +40,7 @@ public class AuthService {
             createMemberDTO.setPassword(aPassword);
             memberMapper.signup(createMemberDTO);
 
-            return new Result(ResultCode.SUCCESS, createMemberDTO);
+            return new Result(ResultCode.SUCCESS, "회원가입 완료");
         } catch (Exception e) {
             System.out.println(e.getMessage());
             return new Result(ResultCode.FAIL_TO_SAVE_USER);
@@ -107,7 +107,7 @@ public class AuthService {
             cookie.setMaxAge(0);
             response.addCookie(cookie);
 
-            return new Result(ResultCode.SUCCESS);
+            return new Result(ResultCode.SUCCESS,"refresh 토큰 삭제가 완료했습니다.");
 
         } catch (Exception e) {
             System.out.println(e.getMessage());

@@ -13,6 +13,7 @@ import java.time.LocalDateTime;
 @Alias(value = "member")
 @Getter
 public class RequestMemberDTO {
+    @JsonIgnore
     @Schema(description = "사용자 ID", example = "1")
     private Long memberId; // 데이터베이스의 memberId와 매핑
 
@@ -28,6 +29,7 @@ public class RequestMemberDTO {
             regexp = "^(?=.*[A-Za-z])(?=.*\\d)(?=.*[@$!%*#?&])[A-Za-z\\d@$!%*#?&]{8,}$",
             message = "비밀번호는 최소 하나의 문자, 숫자, 특수 문자를 포함해야 합니다."
     )
+    @Schema(description = "비밀번호" ,example = "test!@3!")
     private String password;
 
     @Schema(description = "주소", example = "서울시 강남구")
@@ -36,7 +38,9 @@ public class RequestMemberDTO {
     @Schema(description = "우편번호", example = "12345")
     private String zipcode;
 
+    @JsonIgnore
     private LocalDateTime createdAt;
+    @JsonIgnore
     private LocalDateTime updatedAt;
 
     // refreshToken 컬럼
