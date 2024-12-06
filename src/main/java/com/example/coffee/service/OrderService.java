@@ -28,7 +28,6 @@ public class OrderService {
             if (orderId == null || orderId <= 0) {
                 return new Result(ResultCode.INVALID_PARAMETER);
             }
-
             // 2. 주문 조회
             OrderResponseDTO order = orderMapper.getOrderById(orderId);
 
