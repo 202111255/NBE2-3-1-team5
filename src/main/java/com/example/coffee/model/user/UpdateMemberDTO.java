@@ -1,9 +1,11 @@
 package com.example.coffee.model.user;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 @Getter
 public class UpdateMemberDTO {
+    @JsonIgnore
     private Long memberId;
     private String name;
     private String address;
