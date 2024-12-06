@@ -29,24 +29,21 @@ public class ProductController {
     }
 
     // 상품 생성
-    @PostMapping
+    @PostMapping("/insert")
     public Result<Void> createProduct(@RequestBody ProductRequestDTO productRequest) {
-        productService.createProduct(productRequest);
-        return new Result<>(ResultCode.SUCCESS);
+        return productService.createProduct(productRequest);
     }
 
     // 상품 수정
-    @PutMapping("/{id}")
+    @PutMapping("/update/{id}")
     public Result<Void> updateProduct(@PathVariable Long id, @RequestBody ProductRequestDTO productRequest) {
-        productService.updateProduct(id, productRequest);
-        return new Result<>(ResultCode.SUCCESS);
+        return productService.updateProduct(id, productRequest);
     }
 
     // 상품 삭제
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public Result<Void> deleteProduct(@PathVariable Long id) {
-        productService.deleteProduct(id);
-        return new Result<>(ResultCode.SUCCESS);
+        return productService.deleteProduct(id);
     }
 }
 

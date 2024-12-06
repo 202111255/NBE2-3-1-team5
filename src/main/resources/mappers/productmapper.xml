@@ -14,7 +14,7 @@
         </select>
 
         <!-- 상품 생성 -->
-        <insert id="save" parameterType="com.example.coffee.model.product.ProductDTO">
+        <insert id="insert" parameterType="com.example.coffee.model.product.ProductDTO">
             INSERT INTO product (name, price, inventory, description, image)
             VALUES (#{name}, #{price}, #{inventory}, #{description}, #{image})
         </insert>
