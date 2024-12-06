@@ -85,7 +85,6 @@ public class OrderService {
             // 1. memberId 가져오기
             RequestMemberDTO member = memberMapper.userInfo(memberId);
             Long Id = member.getMemberId();
-
             // 2. 주문 조회
             List<OrderByMemberResponseDTO> order = orderMapper.getOrderByMemberId(Id);
 

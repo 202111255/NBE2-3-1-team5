@@ -16,23 +16,29 @@ public class CartController {
     @Autowired
     private CartService cartService;
 
-    @GetMapping("/cart/{cartid}")
-    public Result viewCartList(@PathVariable Long cartid) {
-        return cartService.viewCartList(cartid);
+    @GetMapping("/cart")
+    public Result viewCartList(@AuthenticationPrincipal Long userId) {
+        return cartService.viewCartList(userId);
+    }
+
+    @PostMapping("/cart/products")
+    public Result addProductToCart(@AuthenticationPrincipal Long userId, @RequestBody CartAddRequestDTO request) {
+        return cartService.cartProductAdd(userId, request);
     }
 
     @PostMapping("/cart")
-    public Result addProductToCart(@RequestBody CartAddRequestDTO request) {
-        return cartService.cartProductAdd(request);
+    public Result createCart(@AuthenticationPrincipal Long userId) {
+        return cartService.createCart(userId);
     }
 
     @PutMapping("/cart")
-    public Result updateCartList(@RequestBody CartUpdateRequestDTO request) {
-        return cartService.updateCartList(request);
+    public Result updateCartList(@AuthenticationPrincipal Long userId, @RequestBody CartUpdateRequestDTO request) {
+        return cartService.updateCartList(userId, request);
     }
 
+
     @DeleteMapping("/cart")
-    public Result deleteCartList(@RequestBody CartDeleteRequestDTO request) {
-        return cartService.deleteCartList(request);
+    public Result deleteCartList(@AuthenticationPrincipal Long userId, @RequestParam Long productId) {
+        return cartService.deleteCartList(userId, productId);
     }
 }

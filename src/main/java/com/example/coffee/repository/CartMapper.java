@@ -3,6 +3,8 @@ package com.example.coffee.repository;
 
 import com.example.coffee.model.cart.*;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 import java.util.Map;
 
@@ -10,13 +12,13 @@ import java.util.Map;
 public interface CartMapper {
     Long getCartIdByMemberId(Long userId);
 
-    List<ViewCartListDTO> viewCartList(Long cartId);
+    List<ViewCartListDTO> viewCartList(Long userId);
 
     ViewDetailsDTO getViewDetails(Long cartId);
 
     void cartProductAdd(Map<String, Object> params);
 
-    void deleteCartList(CartDeleteRequestDTO request);
+    void deleteCartList(Map<String, Object> params);
 
     void updateCartList(UpdateProductDetailsDTO updateDTO);
 
@@ -26,9 +28,11 @@ public interface CartMapper {
 
     int getPriceById(Long productId);
 
-    int countProductByCartIdAndProductId(CartAddRequestDTO request);
+    int countProductByCartIdAndProductId(@Param("cartId") Long cartId, @Param("productId") Long prodId);
 
     String findProductInCart(FindProductInCartDTO to);
 
     void updateTotals(Long cartId);
+
+    void createCart(Long userId);
 }

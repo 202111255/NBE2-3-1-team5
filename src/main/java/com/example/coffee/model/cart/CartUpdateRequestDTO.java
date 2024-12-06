@@ -8,7 +8,6 @@ import org.apache.ibatis.type.Alias;
 @Setter
 @Alias(value = "CartUpdateRequestDTO")
 public class CartUpdateRequestDTO {
-    private Long cartId;
     private Long productId;
     private int quantity;
 }

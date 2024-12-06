@@ -3,13 +3,13 @@
 <mapper namespace="com.example.coffee.repository.CartMapper">
     <select id="getCartIdByMemberId" resultType="Long">
         select cartId
-        from
+        from cart
         where memberId = #{userId}
     </select>
     <select id="viewCartList" resultType="ViewCartListDTO">
         select cartId, cartitemid, productId, quantity, price
         from cart_list
-        where cartId = #{cartId}
+        where cartId = #{userId}
     </select>
 
     <select id="getViewDetails" resultType="ViewDetailsDTO">
@@ -74,16 +74,22 @@
         update cart
         set
             totalPrice = (
-                select sum(price)
+                select coalesce(sum(price), 0)
                 from cart_list
                 where cartId = #{cartId}
             ),
             totalquantity = (
-                select sum(quantity)
+                select coalesce(sum(quantity), 0)
                 from cart_list
                 where cartId = #{cartId}
             )
         where cartId = #{cartId};
     </update>
+
+    <insert id="createCart" >
+        insert into cart (memberId, totalQuantity, totalPrice, createdAt, updatedAt)
+        values ( #{userId}, 0, 0, NOW(), NOW() );
+
+    </insert>
 
 </mapper>
