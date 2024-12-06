@@ -3,8 +3,8 @@
 <mapper namespace="com.example.coffee.repository.CartMapper">
     <select id="getCartIdByMemberId" resultType="Long">
         select cartId
-        from
-        where memberId = #{userId}
+        from cart
+        where memberId = #{cartId}
     </select>
     <select id="viewCartList" resultType="ViewCartListDTO">
         select cartId, cartitemid, productId, quantity, price

@@ -26,6 +26,10 @@ public class CartController {
         return cartService.cartProductAdd(memberId, request);
     }
 
+    @PostMapping("/cart/")
+    public Result createCart(@AuthenticationPrincipal Long memberId) {
+        return cartService.cartProductAdd(memberId);
+    }
     @PutMapping("/cart")
     public Result updateCartList(@AuthenticationPrincipal Long memberId, @RequestBody CartUpdateRequestDTO request) {
         return cartService.updateCartList(memberId, request);

@@ -27,9 +27,7 @@ public class CartService {
             System.out.println("시작");
             // cartId 가져오기
             RequestMemberDTO member = memberMapper.userInfo(memberId);
-            System.out.println("시작2");
             Long Id = member.getMemberId();
-            System.out.println("시작2");
             Long cartId = cartMapper.getCartIdByMemberId(Id);
 
 
@@ -243,10 +241,19 @@ public class CartService {
             return new Result(ResultCode.SYSTEM_ERROR);
         }
     }
+
+    public Result createCart memberId, Long productId) {
+        try {
+
+
+        } catch (Exception e) {
+
+        }
     /*
     public boolean convertLongToBoolean(Long userId) {
         return (userId != null && userId > 0);
     }
 
      */
+    }
 }
