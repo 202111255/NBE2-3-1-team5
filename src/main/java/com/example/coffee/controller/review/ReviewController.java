@@ -19,7 +19,7 @@ public class ReviewController {
     @Autowired
     private ReviewService reviewService;
 
-
+    @PostMapping()
     @Operation(summary = "리뷰 작성", description = "리뷰 작성 API 입니다. 로그인 필수 / 요청항목 : 상품(product)ID, 리뷰내용. " )
     public Result insertReview(@AuthenticationPrincipal Long userId, @RequestBody ReviewRequestDTO reviewRequestDTO){
         return reviewService.insertReview(userId, reviewRequestDTO);
