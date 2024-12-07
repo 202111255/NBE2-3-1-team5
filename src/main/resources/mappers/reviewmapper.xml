@@ -17,4 +17,8 @@
         where reviewId = #{reviewId} and memberId = #{memberId}
     </delete>
 
+    <delete id="deleteReviewsByProductId" parameterType="long">
+        DELETE FROM review WHERE productId = #{productId}
+    </delete>
+
 </mapper>

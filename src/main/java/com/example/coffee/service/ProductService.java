@@ -7,6 +7,7 @@ import com.example.coffee.model.product.ProductRequestDTO;
 import com.example.coffee.model.product.ProductResponseDTO;
 import com.example.coffee.model.review.ReviewResponseDTO;
 import com.example.coffee.repository.ProductMapper;
+import com.example.coffee.repository.ReviewMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.dao.DataAccessException;
 import org.springframework.stereotype.Service;
@@ -18,6 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 public class ProductService {
     private final ProductMapper productMapper;
+    private final ReviewMapper reviewMapper;
 
     // 모든 상품 조회
     public Result<List<ProductResponseDTO>> getAllProducts() {
@@ -94,6 +96,10 @@ public class ProductService {
             return new Result<>(ResultCode.INVALID_PARAMETER);
         }
         try {
+
+            int deletedReviews = reviewMapper.deleteReviewsByProductId(productId);
+            System.out.println("Deleted Reviews Count: " + deletedReviews);
+
             int sqlNum = productMapper.delete(productId);
             if (sqlNum == 0) {
                 return new Result<>(ResultCode.PRODUCT_NOT_FOUND);
