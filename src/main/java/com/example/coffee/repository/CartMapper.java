@@ -24,6 +24,8 @@ public interface CartMapper {
 
     String selectCartId(Long cartId);
 
+    String selectMemberId(Long memberId);
+
     String getProductById(Long productId);
 
     int getPriceById(Long productId);

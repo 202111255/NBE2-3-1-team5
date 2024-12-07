@@ -76,10 +76,15 @@ public class CartService {
             Long Id = member.getMemberId();
             Long cartId = cartMapper.getCartIdByMemberId(Id);
 
-            // 1. 데이터베이스 작성
-            cartMapper.createCart(userId);
+            if (cartMapper.selectMemberId(Id) == null) {
+                cartMapper.createCart(userId);
+                return new Result(ResultCode.SUCCESS);
+            } else {
+                System.out.println("이미 DB에 존재");
+                return new Result(ResultCode.CART_ALREADY_CREATED);
+            }
 
-            return new Result(ResultCode.SUCCESS);
+
 
         } catch (DataAccessException dae) {
             // 데이터베이스 관련 예외 처리

@@ -44,6 +44,12 @@
         where cartId = #{cartid}
     </select>
 
+    <select id="selectMemberId" resultType="String">
+        select cartId
+        from cart
+        where memberId = #{memberId}
+    </select>
+
     <select id="getProductById" resultType="String">
         select productId
         from product

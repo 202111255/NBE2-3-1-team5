@@ -41,6 +41,7 @@ public enum ResultCode {
     CART_NOT_FOUND(404, "장바구니가 비어 있습니다."),
     FAIL_TO_ADD_TO_CART(500, "장바구니에 상품 추가를 실패했습니다."),
     ITEM_ALREADY_IN_CART(409, "장바구니에 이미 추가된 상품입니다."),
+    CART_ALREADY_CREATED(410, "카트가 이미 존재합니다."),
     FAIL_TO_REMOVE_FROM_CART(500, "장바구니에서 상품 삭제를 실패했습니다."),
 
     //  상품(커피) 관련
