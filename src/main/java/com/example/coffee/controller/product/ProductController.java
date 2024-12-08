@@ -29,7 +29,7 @@ public class ProductController {
     // 특정 상품 조회
     @GetMapping("/{id}")
     @Operation(summary = "특정 상품 조회", description = "특정 상품 조회 API 입니다. 요청항목 : 상품(product)ID" )
-    public Result<ProductResponseDTO> getProductById(@PathVariable Long id) {
+    public Result<ProductResponseDTO> getProductById(@PathVariable("id") Long id) {
         return productService.getProductById(id);
     }
 
