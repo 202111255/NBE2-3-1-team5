@@ -97,5 +97,4 @@
         values ( #{userId}, 0, 0, NOW(), NOW() );
 
     </insert>
-
 </mapper>
