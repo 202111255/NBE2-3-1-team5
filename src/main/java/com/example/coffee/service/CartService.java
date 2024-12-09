@@ -7,10 +7,9 @@ import com.example.coffee.model.user.RequestMemberDTO;
 import com.example.coffee.repository.CartMapper;
 import com.example.coffee.repository.MemberMapper;
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
-import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
+
 
 import java.util.HashMap;
 import java.util.Map;
@@ -158,7 +157,7 @@ public class CartService {
     }
 
     // 장바구니 상품 개수 변경
-    public Result updateCartList(Long userId, CartUpdateRequestDTO request) {
+    public Result updateCartList(Long userId, Long productId, int quantity) {
         try {
             // cartId 가져오기
             RequestMemberDTO member = memberMapper.userInfo(userId);
@@ -167,14 +166,14 @@ public class CartService {
             // 오류 확인 ==================================================================================
 
             // 1. 상품 수량 < 0 인 경우
-            if (request.getQuantity() < 0) {
+            if (quantity < 0) {
                 return new Result(ResultCode.INVALID_PARAMETER);
             }
 
             // 해당 cartId에 productId가 포함되어 있지 않은 경우
             FindProductInCartDTO findDTO = new FindProductInCartDTO();
             findDTO.setCartId(cartId);
-            findDTO.setProductId(request.getProductId());
+            findDTO.setProductId(productId);
             if (cartMapper.findProductInCart(findDTO) == null) {
                 return new Result(ResultCode.PRODUCT_NOT_FOUND);
             }
@@ -182,10 +181,10 @@ public class CartService {
             // 정상 처리 ==================================================================================
 
             // 1. 상품 수량을 0으로 업데이트하려는 경우, 해당 상품을 삭제 처리
-            if (request.getQuantity() == 0) {
+            if (quantity == 0) {
                 Map<String, Object> params = new HashMap<>();
                 params.put("cartId", cartId);       // 장바구니 ID
-                params.put("productId", request.getProductId()); // 상품 ID
+                params.put("productId", productId); // 상품 ID
 
                 cartMapper.deleteCartList(params); // 상품 삭제
                 cartMapper.updateTotals(cartId); // 장바구니 총 개수 및 총 가격 업데이트
@@ -195,9 +194,9 @@ public class CartService {
             // 2. 상품 개수 및 가격 정보 업데이트
             UpdateProductDetailsDTO updateDTO = new UpdateProductDetailsDTO();
             updateDTO.setCartId(cartId);
-            updateDTO.setProductId(request.getProductId());
-            updateDTO.setQuantity(request.getQuantity());
-            updateDTO.setPrice(request.getQuantity() * cartMapper.getPriceById(request.getProductId())); // 가격 계산
+            updateDTO.setProductId(productId);
+            updateDTO.setQuantity(quantity);
+            updateDTO.setPrice(quantity * cartMapper.getPriceById(productId)); // 가격 계산
 
             // 3. 데이터베이스 작업
             cartMapper.updateCartList(updateDTO); // 상품 정보 업데이트
